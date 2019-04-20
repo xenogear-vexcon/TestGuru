@@ -2,8 +2,10 @@
 
 one:
   title: MyString
-  level: 1
+  level: 
+  category: one
 
 two:
   title: MyString
-  level: 1
+  level: 
+  category: two
