@@ -32,7 +32,7 @@ users = User.create!(hash_users)
 
 hash_categories = CATEGORIES.times.map do 
   {
-    category: FFaker::BaconIpsum.word,
+    title: FFaker::BaconIpsum.word,
   }
 end
 categories = Category.create!(hash_categories)
@@ -71,10 +71,3 @@ users.each do |user|
     Result.create(score: rand(1..ATTEMPTS), test_id: test.id, user_id: user.id)
   end
 end
-
-
-
-# category = Category.create!(category)
-# test = Test.create!(test)
-# question = Question.create!(question)
-# answer = Answer.create!(answer)
