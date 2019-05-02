@@ -50,7 +50,7 @@ tests = Test.create!(hash_tests)
 
 hash_questions = QUESTIONS.times.map do
   {
-    question: FFaker::BaconIpsum.sentence,
+    body: FFaker::BaconIpsum.sentence,
     test: tests.sample,
   }
 end
