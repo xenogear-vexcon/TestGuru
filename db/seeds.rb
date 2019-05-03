@@ -43,6 +43,7 @@ hash_tests = TESTS.times.map do
     title: FFaker::BaconIpsum.word,
     level: Random.rand(0..10),
     category: categories.sample,
+    author: users.first
   }
 end
 tests = Test.create!(hash_tests)
