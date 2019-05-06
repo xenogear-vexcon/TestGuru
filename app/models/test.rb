@@ -5,8 +5,19 @@ class Test < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :users, through: :results
 
-  def self.sort_by_category(test_category)
-    joins(:category).where(categories: { title: test_category })
-                    .order(title: :desc).pluck(:title)
+  validates :title, presence: true, uniqueness: { scope: :level,
+    message: "can be only one test with that title and level" }
+  validates :level, numericality: { only_integer: true }
+
+  default_scope { order(title: :desc) }
+  scope :easy, -> { where(level: (0..1)) }
+  scope :medium, -> { where(level: (2..4)) }
+  scope :hard, -> { where(level: (5..Float::INFINITY)) }
+  scope :sort_by_category, -> (test_category) { joins(:category)
+                                                .where(categories: { title: test_category }) }
+
+  def self.by_category(cat)
+    sort_by_category(cat).pluck(:title)
   end
+
 end
