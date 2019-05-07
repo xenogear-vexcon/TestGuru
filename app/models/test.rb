@@ -7,7 +7,8 @@ class Test < ApplicationRecord
 
   validates :title, presence: true, uniqueness: { scope: :level,
     message: "can be only one test with that title and level" }
-  validates :level, numericality: { only_integer: true }
+  validates :level, numericality: { greater_than_or_equal_to: 0,
+                                    only_integer: true }
 
   default_scope { order(title: :desc) }
   scope :easy, -> { where(level: (0..1)) }

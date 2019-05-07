@@ -3,9 +3,9 @@ class Answer < ApplicationRecord
 
   validates :answers_quantity, on: :create
 
-  scope :cor_answers, -> { where(correct: true) }
+  scope :correct, -> { where(correct: true) }
 
   def answers_quantity
-    errors.add(:question, "there 1-4 possible answers") if question.answers.quantity.exclude?(1..4)
+    errors.add(:question, "there 1-4 possible answers") if question.answers.count > 4
   end
 end
