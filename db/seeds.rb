@@ -16,7 +16,7 @@ USERS = 10
 CATEGORIES = 5
 TESTS = 10
 QUESTIONS = 30
-ATTEMPTS = rand(1..QUESTIONS)
+ANSWERS = 50
 CORRECTNESS = true
 
 hash_users = USERS.times.map.with_index do |num|
@@ -58,17 +58,17 @@ end
 questions = Question.create!(hash_questions)
 
 
-hash_answers = ATTEMPTS.times.map do
+hash_answers = ANSWERS.times.map do
   {
     body: FFaker::BaconIpsum.word,
-    question: questions[rand(ATTEMPTS-1)],
+    question: questions[rand(QUESTIONS)],
     correct: CORRECTNESS,
   }
 end
 answers = Answer.create!(hash_answers)
 
 users.each do |user|
-  tests.sample(ATTEMPTS).each do |test|
-    Result.create(score: rand(1..ATTEMPTS), test_id: test.id, user_id: user.id)
+  tests.sample(rand(QUESTIONS)).each do |test|
+    Result.create(score: rand(1..QUESTIONS), test_id: test.id, user_id: user.id)
   end
 end

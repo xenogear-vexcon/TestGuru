@@ -1,0 +1,9 @@
+<% @test.questions.each_with_index do |question, i| %>
+	<p>
+		<%= i + 1 %>. <b>Вопрос: </b> <%= question.body %>
+		<%= link_to 'Детали', question_path(question), :class => "btn btn-warning" %>
+	</p>
+<% end %>
+<%= link_to 'Добавить вопрос', new_test_question_path(@test.id), :class => "btn btn-warning" %>
+<%= link_to 'Назад к тестам', tests_path, :class => "btn btn-warning" %>
+<hr>

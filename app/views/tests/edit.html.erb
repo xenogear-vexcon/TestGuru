@@ -1,0 +1,19 @@
+<h2>Редактирование теста</h2>
+<%= form_for :test, url: test_path do |f| %>
+<% if @test.errors.any? %>
+	<% @test.errors.full_messages.each do |msg| %>
+		<div class='alert alert-danger'><%= msg %></div>
+	<% end %>
+<% end %>
+
+	<p>Название теста<br>
+		<%= f.text_area(:title, {:class => 'form-control'}) %>
+	</p>
+	<p>Уровень теста<br>
+		<%= f.text_field(:level, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%= f.submit({:class => 'btn btn-success'})%>
+	</p>
+<% end %>
+<%= link_to 'Назад к тестам', tests_path, :class => "btn btn-warning"%>

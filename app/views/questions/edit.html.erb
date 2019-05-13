@@ -1,0 +1,14 @@
+<h2>Редактирование вопроса</h2>
+<%= form_for @question, url: question_path do |f| %>
+	<p>ID Вопроса<br>
+		<%= f.text_field(:id, {:class => 'form-control'}) %>
+	</p>
+
+	<p>Вопрос<br>
+		<%= f.text_area(:body, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%= f.submit("Обновить", {:class => 'btn btn-success'})%>
+	</p>
+<% end %>
+<%= link_to 'Назад к вопросу', question_path(@question), :class => "btn btn-warning"%>
