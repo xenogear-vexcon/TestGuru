@@ -1,5 +1,7 @@
 class TestsController < ApplicationController
 
+  before_action :find_test, only: %i[show edit update destroy]
+
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
@@ -10,13 +12,9 @@ class TestsController < ApplicationController
     @test = Test.new
   end
 
-  def show
-    @test = Test.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @test = Test.find(params[:id])
-  end
+  def edit; end
 
   def create
     @test = Test.new(test_params)
@@ -28,8 +26,6 @@ class TestsController < ApplicationController
   end
 
   def update
-    @test = Test.find(params[:id])
-
     if @test.update(test_params)
       redirect_to @test
     else
@@ -38,8 +34,6 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    @test = Test.find(params[:id])
-
     @test.destroy
     redirect_to tests_path
   end
@@ -48,5 +42,9 @@ class TestsController < ApplicationController
 
   def test_params
     params.require(:test).permit(:title, :level)
+  end
+
+  def find_test
+    @test = Test.find(params[:id])
   end
 end

@@ -9,11 +9,9 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @question = @test.questions.new(question_params)
@@ -36,13 +34,13 @@ class QuestionsController < ApplicationController
   def destroy
 
     @question.destroy
-    redirect_to test_path(@question.test_id)
+    redirect_to @question.test
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:id, :body)
+    params.require(:question).permit(:body)
   end
 
   def find_test

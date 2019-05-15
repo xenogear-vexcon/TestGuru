@@ -1,8 +1,5 @@
 <h2>Редактирование вопроса</h2>
-<%= form_for @question, url: question_path do |f| %>
-	<p>ID Вопроса<br>
-		<%= f.text_field(:id, {:class => 'form-control'}) %>
-	</p>
+<%= form_with model: @question do |f| %>
 
 	<p>Вопрос<br>
 		<%= f.text_area(:body, {:class => 'form-control'}) %>
