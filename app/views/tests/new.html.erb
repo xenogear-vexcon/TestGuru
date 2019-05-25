@@ -1,18 +1,3 @@
 <h2>Добавление нового теста</h2>
 
-<form accept-charset="UTF-8" action="/tests/" data-remote="true" method="post">
-<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-	<p>
-		<label for="test-title">Название теста</label>
-		<input type="text" name="test[title]" id="test-title" class='form-control'>
-	</p><br>
-
-	<p>
-		<label for="test-level">Уровень теста</label>
-		<input type="number" name="test[level]" id="test-level" class='form-control'>
-	</p>
-	<p>
-		<input type="submit" value="Добавить тест" class='btn btn-success'>
-	</p>
-</form>
-<%= link_to 'Назад к тестам', tests_path, :class => "btn btn-warning"%>
+<%= render 'form' %>
