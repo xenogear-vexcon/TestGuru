@@ -10,7 +10,6 @@ Category.destroy_all
 Test.destroy_all
 Question.destroy_all
 Answer.destroy_all
-Result.destroy_all
 
 USERS = 10
 CATEGORIES = 5
@@ -67,8 +66,3 @@ hash_answers = ANSWERS.times.map do
 end
 answers = Answer.create!(hash_answers)
 
-users.each do |user|
-  tests.sample(rand(QUESTIONS)).each do |test|
-    Result.create(score: rand(1..QUESTIONS), test_id: test.id, user_id: user.id)
-  end
-end

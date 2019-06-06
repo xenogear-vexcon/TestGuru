@@ -1,7 +1,7 @@
 <h1>Все наши тесты</h1>
 <br>
 <p>
-  <%= link_to 'Создать тест', new_test_path, :class => "btn btn-warning" %>
+  <%= link_to 'Create new test', new_test_path, :class => "btn btn-warning" %>
 </p>
 
 <% @test.each do |test| %>
@@ -9,9 +9,10 @@
     <h3>Тест: <%= test.title %></h3>
     <p>Уровень: <%= test.level %></p>
     <p>Количество вопросов: <%= test.questions.count %></p>
-    <%= link_to "Смотреть вопросы", test_path(test), :class => 'btn btn-outline-primary' %>
-    <%= link_to 'Редактировать тест', edit_test_path(test), :class => "btn btn-warning" %>
-    <%= link_to 'Удалить тест', test_path(@test), method: :delete, data: {confirm: 'Хотите удалить тест?'}, :class => "btn btn-danger" %>
+    <%= button_to "Pass_the_test", start_test_path(test), :class => 'btn btn-success' %>
+    <%= link_to "Show", test_path(test), :class => 'btn btn-outline-primary' %>
+    <%= link_to 'Edit', edit_test_path(test), :class => "btn btn-warning" %>
+    <%= link_to 'Delete', test_path(@test), method: :delete, data: {confirm: 'Want to delete a question?'}, :class => "btn btn-danger" %>
   </div>
   <hr>
 <% end %>
