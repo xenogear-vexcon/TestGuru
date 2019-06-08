@@ -3,7 +3,7 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
+  before_validation :before_validation_set_question
 
   SUCCESS = 85
 
@@ -13,7 +13,6 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_answers += 1 if correct_answer?(answer_ids)
-    set_next_question
 
     save!
   end
@@ -36,8 +35,12 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
+  def before_validation_set_question
+    if test.present? && current_question.nil?
+      self.current_question = test.questions.first
+    else
+      self.current_question = next_question
+    end
   end
 
   def correct_answer?(answer_ids)
@@ -46,10 +49,6 @@ class TestPassage < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
-  end
-
-  def set_next_question
-    self.current_question = next_question
   end
 
 end
