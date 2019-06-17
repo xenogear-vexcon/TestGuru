@@ -11,22 +11,21 @@ Test.destroy_all
 Question.destroy_all
 Answer.destroy_all
 
-USERS = 10
+# USERS = 10
 CATEGORIES = 5
 TESTS = 10
 QUESTIONS = 30
 ANSWERS = 50
 CORRECTNESS = true
 
-hash_users = USERS.times.map.with_index do |num|
-  {
-    name: FFaker::Internet.user_name[0...16],
-    age: Random.rand(15..60),
-    email: FFaker::Internet.safe_email,
-    password: Random.rand(1000..9999),
-  }
-end
-users = User.create!(hash_users)
+# hash_users = USERS.times.map.with_index do |num|
+#   {
+#     name: FFaker::Internet.user_name[0...16],
+#     email: FFaker::Internet.safe_email,
+#     password: Random.rand(1000..9999),
+#   }
+# end
+user = User.create!( name: 'Slevin Kelevra', email: 'example@mail.com', password: '1234')
 
 
 hash_categories = CATEGORIES.times.map do 
@@ -42,7 +41,7 @@ hash_tests = TESTS.times.map do
     title: FFaker::BaconIpsum.word,
     level: Random.rand(0..10),
     category: categories.sample,
-    author: users.first
+    author: user,
   }
 end
 tests = Test.create!(hash_tests)
