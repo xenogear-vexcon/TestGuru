@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_05_07_225808) do
 
   create_table "answers", force: :cascade do |t|
-    t.string "body", null: false
+    t.text "body", null: false
     t.boolean "correct", default: false, null: false
     t.integer "question_id"
     t.datetime "created_at", null: false
@@ -35,14 +35,16 @@ ActiveRecord::Schema.define(version: 2019_05_07_225808) do
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
-  create_table "results", force: :cascade do |t|
-    t.integer "score"
+  create_table "test_passages", force: :cascade do |t|
+    t.integer "correct_answers", default: 0
     t.integer "test_id"
     t.integer "user_id"
+    t.integer "current_question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["test_id"], name: "index_results_on_test_id"
-    t.index ["user_id"], name: "index_results_on_user_id"
+    t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
+    t.index ["test_id"], name: "index_test_passages_on_test_id"
+    t.index ["user_id"], name: "index_test_passages_on_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
