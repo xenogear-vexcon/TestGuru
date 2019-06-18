@@ -5,7 +5,7 @@
 	</p>
 <% end %>
 <% if logged_in? %>
-	<%= link_to 'Add new', new_test_question_path(@test.id), :class => "btn btn-warning" %>
+<%= link_to 'Add new', new_test_question_path(@test.id), :class => "btn btn-warning" %>
 <% end %>
 <%= link_to 'Back', tests_path, :class => "btn btn-warning" %>
 <hr>

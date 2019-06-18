@@ -3,7 +3,7 @@
   <h5><%= link_to 'TestGuru', root_path, :class => "my-0 mr-md-auto font-weight-normal" %></h5>
   <% if logged_in? %>
 		<p>Welcome, <b><%= current_user.name %>!</b></p>
-		<%= link_to 'Sign out', logout_path, :class => "btn btn-outline-primary" %>
+		<%= link_to 'Sign out', logout_path, method: :delete, :class => "btn btn-outline-primary" %>
   <% else %>
 		<%= link_to 'Registration', users_new_path, :class => "btn btn-outline-primary" %>
 		<%= link_to 'Sign in', login_path, :class => "btn btn-outline-primary" %>

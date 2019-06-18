@@ -12,10 +12,10 @@
     <p>Уровень: <%= test.level %></p>
     <p>Количество вопросов: <%= test.questions.count %></p>
     <%= link_to "Show", test_path(test), :class => 'btn btn-outline-primary' %>
-    <%= button_to "Pass_the_test", start_test_path(test), :class => 'btn btn-success' %>
     <% if logged_in? %>
-      <%= link_to 'Edit', edit_test_path(test), :class => "btn btn-warning" %>
-      <%= link_to 'Delete', test_path(@test), method: :delete, data: {confirm: 'Want to delete a question?'}, :class => "btn btn-danger" %>
+    <%= button_to "Pass_the_test", start_test_path(test), :class => 'btn btn-success' %>
+    <%= link_to 'Edit', edit_test_path(test), :class => "btn btn-warning" %>
+    <%= link_to 'Delete', test_path(@test), method: :delete, data: {confirm: 'Want to delete a question?'}, :class => "btn btn-danger" %>
     <% end %>
   </div>
   <hr>
