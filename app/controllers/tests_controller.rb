@@ -1,46 +1,12 @@
 class TestsController < ApplicationController
 
   before_action :authenticate_user!, except: %i[show index]
-  before_action :find_test, only: %i[show edit update destroy start]
-  before_action :find_user, only: :start
+  before_action :find_test, only: %i[start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
     @test = Test.all
-  end
-
-  def new
-    @test = Test.new
-  end
-
-  def show; end
-
-  def edit; end
-
-  def create
-    @test = Test.new(test_params)
-    if @test.save
-      flash[:success] = "Test was successfully created."
-      redirect_to @test
-    else
-      render 'new'
-    end
-  end
-
-  def update
-    if @test.update(test_params)
-      flash[:success] = "Test was successfully updated."
-      redirect_to @test
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @test.destroy
-    flash[:danger] = "Test was successfully deleted."
-    redirect_to tests_path
   end
 
   def start
@@ -58,8 +24,4 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def find_user
-    # на время теста всегда первый пользователь
-    @user = User.first
-  end
 end
