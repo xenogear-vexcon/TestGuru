@@ -17,8 +17,7 @@ class Admin::TestsController < Admin::BaseController
   def edit; end
 
   def create
-    @test = Test.new(test_params)
-    @test.author = current_user
+    @test = current_user.authroship.new(test_params)
     
     if @test.save
       flash[:success] = "Test was successfully created."

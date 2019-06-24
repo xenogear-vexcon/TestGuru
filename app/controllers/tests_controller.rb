@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
 
-  before_action :authenticate_user!, except: %i[show index]
+  before_action :authenticate_user!, except: %i[index]
   before_action :find_test, only: %i[start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
