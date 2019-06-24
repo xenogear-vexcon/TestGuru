@@ -1,21 +1,13 @@
 <h1>Все наши тесты</h1>
 <br>
-<p>
-  <% if logged_in? %>
-    <%= link_to 'Create new test', new_test_path, :class => "btn btn-warning" %>
-  <% end %>
-</p>
 
 <% @test.each do |test| %>
   <div class="alert alert-light">
     <h3>Тест: <%= test.title %></h3>
     <p>Уровень: <%= test.level %></p>
     <p>Количество вопросов: <%= test.questions.count %></p>
-    <%= link_to "Show", test_path(test), :class => 'btn btn-outline-primary' %>
-    <% if logged_in? %>
-    <%= button_to "Pass_the_test", start_test_path(test), :class => 'btn btn-success' %>
-    <%= link_to 'Edit', edit_test_path(test), :class => "btn btn-warning" %>
-    <%= link_to 'Delete', test_path(@test), method: :delete, data: {confirm: 'Want to delete a question?'}, :class => "btn btn-danger" %>
+    <% if user_signed_in? %>
+      <%= button_to "Pass_the_test", start_test_path(test), :class => 'btn btn-success' %>
     <% end %>
   </div>
   <hr>

@@ -25,7 +25,8 @@ CORRECTNESS = true
 #     password: Random.rand(1000..9999),
 #   }
 # end
-user = User.create!( name: 'Slevin Kelevra', email: 'example@mail.com', password: '1234')
+user = User.create!( name: 'Slevin Kelevra', email: 'example@mail.com', password: '123456')
+admin = Admin.create!( name: 'John', age: 30, email: 'admin@mail.com', password: '123456' )
 
 
 hash_categories = CATEGORIES.times.map do 
