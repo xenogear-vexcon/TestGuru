@@ -20,8 +20,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.authroship.new(test_params)
     
     if @test.save
-      flash[:success] = "Test was successfully created."
-      redirect_to [:admin, @test]
+      redirect_to [:admin, @test], notice: t.('.success')
     else
       render 'new'
     end
@@ -29,8 +28,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      flash[:success] = "Test was successfully updated."
-      redirect_to [:admin, @test]
+      redirect_to [:admin, @test], notice: t.('.success')
     else
       render 'edit'
     end
@@ -38,8 +36,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    flash[:danger] = "Test was successfully deleted."
-    redirect_to admin_tests_path
+    redirect_to admin_tests_path, notice: t.('.danger')
   end
 
   private

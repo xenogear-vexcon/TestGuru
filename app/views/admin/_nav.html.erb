@@ -1,13 +1,10 @@
 <div class="nav nav-admin">
 	<% if user_signed_in? %>
-	<span class="nav-admin title">TestGuru Admin panel</span>
+	<span class="nav-admin title"><%= t('.title') %></span>
 
 	<div class="nav-admin user">
-		Welcome, <b class="nav-admin user-name"><%= current_user.name %></b> Guru |
-		<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+		<%= t('.welcome') %>, <b class="nav-admin user-name"><%= current_user.name %></b> Guru |
+		<%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %>
 	</div>
-	<% else %>
-	<%= link_to 'Sign in', new_user_session_path %>
-    <%= link_to 'Registation', new_user_registration_path %>
     <% end %>
 </div>

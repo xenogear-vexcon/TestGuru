@@ -1,13 +1,13 @@
-<h1>Все наши тесты</h1>
+<h1><%= t('.header') %></h1>
 <br>
 
 <% @test.each do |test| %>
   <div class="alert alert-light">
-    <h3>Тест: <%= test.title %></h3>
-    <p>Уровень: <%= test.level %></p>
-    <p>Количество вопросов: <%= test.questions.count %></p>
+    <h3><%= t('.test') %>: <%= test.title %></h3>
+    <p><%= t('.level') %>: <%= test.level %></p>
+    <p><%= t('.count') %>: <%= test.questions.count %></p>
     <% if user_signed_in? %>
-      <%= button_to "Pass_the_test", start_test_path(test), :class => 'btn btn-success' %>
+      <%= button_to t('.pass'), start_test_path(test), :class => 'btn btn-success' %>
     <% end %>
   </div>
   <hr>

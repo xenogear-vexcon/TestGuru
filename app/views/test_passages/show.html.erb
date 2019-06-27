@@ -1,5 +1,5 @@
-<h1>Pass the <%= @test_passage.test.title %></h1>
-<p>Progress: <%= @test_passage.question_index %> / <%= @test_passage.test.questions.count %></p>
+<h1><%= t('.test', title: @test_passage.test.title) %></h1>
+<p><%= t('.progress') %>: <%= @test_passage.question_index %> / <%= @test_passage.test.questions.count %></p>
 
 <p><%= @test_passage.current_question.body %></p>
 
@@ -10,5 +10,5 @@
 		<%= b.label %>
 	</p>
 	<% end %>
-	<p><%= form.submit 'Next' %></p>
+	<p><%= form.submit t('.next') %></p>
 <% end %>
