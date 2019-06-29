@@ -1,4 +1,4 @@
-<h2>The <%= @test_passage.test.title %> test was Complited!</h2>
+<h2><%= t('.header', title: @test_passage.test.title) %></h2>
 
 <p>You finished it with <%= @test_passage.correct_answers %> correct questions!</p>
 <p><%= result_message(@test_passage.percentage_score) %></p>

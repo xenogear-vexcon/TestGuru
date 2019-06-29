@@ -1,4 +1,7 @@
 <% if resource.errors.any? %>
+	<h2>
+    <%= t('.header', count: resource.errors.count) %>:  
+  </h2>
 	<% resource.errors.full_messages.each do |msg| %>
 		<div class='alert alert-danger'><%= msg %></div>
 	<% end %>

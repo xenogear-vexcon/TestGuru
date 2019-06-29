@@ -1,0 +1,80 @@
+ru:
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+        destroy: "Удалить тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выбрать"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      test: "Название теста"
+      level: "Уровень"
+      count: "Количество вопросов"
+      pass: "Пройти тест"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+    show:
+      test: "Тест %{title}"
+      progress: "Прогресс"
+      next: "Далее"
+
+  layouts:
+    header:
+      welcome: "Добро пожаловать"
+      sign_in: "Войти"
+      sign_out: "Выйти"
+      registration: "Регистрация"
+
+  admin:
+    nav:
+      title: "Панель администратора TestGuru"
+      welcome: "Добро пожаловать"
+      sign_out: "Выйти"
+    tests:
+      create:
+        success: "Тест успешно создан."
+      update:
+        success: "Тест успешно обновлен."
+      destroy:
+        danger: "Тест успешно удален."
+      index:
+        header: "Доступные тесты"
+        new_test: "Добавить тест"
+        show: "Смотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+      show:
+        new_question: "Добавить вопрос"
+        show: "Смотреть"
+        back: "Назад"
+      new:
+        header: "Добавление нового теста"
+    questions:
+      show:
+        new_answer: "Добавить ответ"
+        edit: "Редактировать"
+        delete: "Удалить"
+        back: "Назад"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"

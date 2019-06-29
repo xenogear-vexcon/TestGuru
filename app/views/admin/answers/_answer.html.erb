@@ -1,6 +1,6 @@
 <li>
   <b><%= answer.body %></b>
-  <i><%= link_to 'Show', admin_answer_path(answer) %>
-  <%= link_to 'Edit', edit_admin_answer_path(answer) %>
-  <%= link_to 'Delete', admin_answer_path(answer), method: :delete, data: {confirm: 'Want to delete a question?'} %></i>
+  <i><%= link_to 'Show', admin_answer_path(answer), :class => "btn btn-warning" %>
+  <%= link_to 'Edit', edit_admin_answer_path(answer), :class => "btn btn-warning" %>
+  <%= link_to 'Delete', admin_answer_path(answer), method: :delete, data: {confirm: 'Want to delete a question?'}, :class => "btn btn-danger" %></i>
 </li>
