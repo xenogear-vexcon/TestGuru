@@ -31,7 +31,7 @@ en:
     result:
       header: "The %{title} test was complited!"
     show:
-      test: "Pass the %{title}"
+      test: "Test %{title}"
       progress: "Progress"
       next: "Next"
 

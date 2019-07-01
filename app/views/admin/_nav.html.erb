@@ -1,10 +1,16 @@
-<div class="nav nav-admin">
-	<% if user_signed_in? %>
-	<span class="nav-admin title"><%= t('.title') %></span>
-
-	<div class="nav-admin user">
-		<%= t('.welcome') %>, <b class="nav-admin user-name"><%= current_user.name %></b> Guru |
-		<%= link_to t('.sign_out'), destroy_user_session_path, method: :delete %>
-	</div>
-    <% end %>
-</div>
+<header class="blog-header py-3">
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="navbar-brand d-flex align-items-center">
+      <%= link_to 'Main page', admin_root_path, :class => "text-white" %>
+    </div>
+    <div class="navbar-brand d-flex align-items-center">
+      <div class="text-white"><%= t('.title') %></div>
+    </div>
+    <div class="col-4 d-flex justify-content-end align-items-center">
+      <% if user_signed_in? %>
+        <div class="text-white"><%= t('.welcome') %>, <b><%= current_user.name %>!</b></div>
+        <%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class:"btn btn-outline-success my-2 my-sm-0" %>
+      <% end %>
+    </div>
+  </div>
+</header>
