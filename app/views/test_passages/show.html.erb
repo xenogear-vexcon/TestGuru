@@ -1,14 +1,17 @@
-<h1><%= t('.test', title: @test_passage.test.title) %></h1>
-<p><%= t('.progress') %>: <%= @test_passage.question_index %> / <%= @test_passage.test.questions.count %></p>
+<h2 class='pb-4 mb-4 font-italic border-bottom'><%= t('.test', title: @test_passage.test.title) %></h2>
+<div class='p-2 text-muted'><%= t('.progress') %>: <%= @test_passage.question_index %> / <%= @test_passage.test.questions.count %></div>
 
-<p><%= @test_passage.current_question.body %></p>
-
+<h4 class='blog-post-title'><%= @test_passage.current_question.body %></h4>
+<br>
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
 	<%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-	<p>
-		<%= b.check_box id: "answer_ids_#{b.object.id}" %>
-		<%= b.label %>
-	</p>
+		<div class='form-check'>
+			<%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>
+			<%= b.label %>
+		</div>
 	<% end %>
-	<p><%= form.submit t('.next') %></p>
+	<br>
+	<div>
+		<%= form.submit t('.next'), class: 'btn btn-sm btn-outline-secondary' %>
+	</div>
 <% end %>

@@ -18,6 +18,15 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    header_user:
+      welcome: "Welcome"
+      sign_in: "Sign in"
+      sign_out: "Sign out"
+      registration: "Registration"
+    header_admin:
+      title: "Admin panel"
+      welcome: "Welcome"
+      sign_out: "Sign out"
 
   tests:
     index:
@@ -31,22 +40,11 @@ en:
     result:
       header: "The %{title} test was complited!"
     show:
-      test: "Pass the %{title}"
+      test: "Test %{title}"
       progress: "Progress"
       next: "Next"
 
-  layouts:
-    header:
-      welcome: "Welcome"
-      sign_in: "Sign in"
-      sign_out: "Sign out"
-      registration: "Registration"
-
   admin:
-    nav:
-      title: "TestGuru Admin panel"
-      welcome: "Welcome"
-      sign_out: "Sign out"
     tests:
       create:
         success: "Test was successfully created."

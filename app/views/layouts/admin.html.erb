@@ -13,11 +13,11 @@
 
   
   <body>
-    <%= render 'admin/nav' %>
     <div class="container">
-      <%= render 'layouts/flashes' %>
+      <%= render 'shared/header_admin' %>
+      <%= render 'shared/flashes' %>
       <%= yield %>
-      <%= render 'layouts/footer' %>
+      <%= render 'shared/footer' %>
     </div>
 
 
