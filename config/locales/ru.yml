@@ -20,6 +20,15 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    header_user:
+      welcome: "Добро пожаловать"
+      sign_in: "Войти"
+      sign_out: "Выйти"
+      registration: "Регистрация"
+    header_admin:
+      title: "Панель администратора"
+      welcome: "Добро пожаловать"
+      sign_out: "Выйти"
 
   tests:
     index:
@@ -37,18 +46,7 @@ ru:
       progress: "Прогресс"
       next: "Далее"
 
-  layouts:
-    header:
-      welcome: "Добро пожаловать"
-      sign_in: "Войти"
-      sign_out: "Выйти"
-      registration: "Регистрация"
-
   admin:
-    nav:
-      title: "Панель администратора TestGuru"
-      welcome: "Добро пожаловать"
-      sign_out: "Выйти"
     tests:
       create:
         success: "Тест успешно создан."
