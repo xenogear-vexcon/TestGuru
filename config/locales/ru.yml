@@ -27,6 +27,8 @@ ru:
       registration: "Регистрация"
     header_admin:
       title: "Панель администратора"
+      main_page: "На главную"
+      admin_gists: "Gists администратора"
       welcome: "Добро пожаловать"
       sign_out: "Выйти"
 
@@ -44,7 +46,11 @@ ru:
     show:
       test: "Тест %{title}"
       progress: "Прогресс"
+      gist: "Gist"
       next: "Далее"
+    gist:
+      success: "Gist был успешно сохранен, %{url}!"
+      failure: "Произошла ошибка при сохранении gist"
 
   admin:
     tests:
@@ -72,7 +78,19 @@ ru:
         edit: "Редактировать"
         delete: "Удалить"
         back: "Назад"
+    gists:
+      index:
+        header: "Gists пользователя"
+        question: "Вопрос"
+        url: "Gist url"
+        user: "email пользователя"
+      gist:
+        url: "Gist url"
 
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  services:
+    gist:
+      description: "Вопрос по %{title} из TestGuru"

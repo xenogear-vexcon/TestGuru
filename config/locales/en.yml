@@ -25,6 +25,8 @@ en:
       registration: "Registration"
     header_admin:
       title: "Admin panel"
+      main_page: "Main page"
+      admin_gists: "Admin gists"
       welcome: "Welcome"
       sign_out: "Sign out"
 
@@ -42,7 +44,11 @@ en:
     show:
       test: "Test %{title}"
       progress: "Progress"
+      gist: "Gist Question"
       next: "Next"
+    gist:
+      success: "Gist was successfully created, %{url}!"
+      failure: "An error occurred while saving gist"
 
   admin:
     tests:
@@ -70,7 +76,19 @@ en:
         edit: "Edit"
         delete: "Delete"
         back: "Back"
+    gists:
+      index:
+        header: "Users Gists"
+        question: "Question"
+        url: "Gist url"
+        user: "User email"
+      gist:
+        url: "Gist url"
 
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  services:
+    gist:
+      description: "A question about %{title} from TestGuru"

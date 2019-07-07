@@ -11,7 +11,6 @@
 		</div>
 	<% end %>
 	<br>
-	<div>
-		<%= form.submit t('.next'), class: 'btn btn-sm btn-outline-secondary' %>
-	</div>
+		<p><%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post %></p>
+		<p><%= form.submit t('.next'), class: 'btn btn-sm btn-outline-secondary' %></p>
 <% end %>
