@@ -1,13 +1,20 @@
 class GistQuestionService
 
+  attr_reader :gist
+
   def initialize(question, client: default_client)
     @question = question
     @test = @question.test
     @client = client
+    @gist = call
   end
 
   def call
     @client.create_gist(gist_params)
+  end
+
+  def success?
+    gist.html_url.present?
   end
 
   private
