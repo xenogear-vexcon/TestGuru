@@ -21,7 +21,7 @@ class TestPassage < ApplicationRecord
     100.0 * correct_answers.count / test.questions.count
   end
 
-  def test_passed?
+  def success?
     percentage_score >= SUCCESS
   end
 
