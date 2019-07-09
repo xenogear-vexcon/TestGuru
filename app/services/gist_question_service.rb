@@ -14,7 +14,7 @@ class GistQuestionService
   end
 
   def success?
-    gist.html_url.present?
+    @gist.html_url.present?
   end
 
   private
