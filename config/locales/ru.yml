@@ -49,7 +49,7 @@ ru:
       gist: "Gist"
       next: "Далее"
     gist:
-      success: "Gist был успешно сохранен, %{url}!"
+      success: "Gist был успешно сохранен, <a href=%{url} target=_blank>Gist</a>!"
       failure: "Произошла ошибка при сохранении gist"
 
   admin:

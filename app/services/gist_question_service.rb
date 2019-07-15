@@ -1,8 +1,8 @@
 class GistQuestionService
 
-  attr_reader :gist
+  attr_reader :gist, :question
 
-  def initialize(question, client: default_client)
+  def initialize(question, client = default_client)
     @question = question
     @test = @question.test
     @client = client
@@ -14,7 +14,11 @@ class GistQuestionService
   end
 
   def success?
-    @gist.html_url.present?
+    url.present?
+  end
+
+  def url
+    gist.html_url
   end
 
   private
@@ -22,6 +26,7 @@ class GistQuestionService
   def gist_params
     {
       description: I18n.t('.description', title: @test.title),
+      public: true,
       files: {
         'test-guru-question.txt' => {
           content: gist_content

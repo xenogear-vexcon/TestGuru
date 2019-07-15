@@ -47,7 +47,7 @@ en:
       gist: "Gist Question"
       next: "Next"
     gist:
-      success: "Gist was successfully created, %{url}!"
+      success: "Gist was successfully created, <a href=%{url} target=_blank>Gist</a>!"
       failure: "An error occurred while saving gist"
 
   admin:
