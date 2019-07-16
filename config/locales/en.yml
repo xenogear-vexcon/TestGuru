@@ -82,12 +82,6 @@ en:
         question: "Question"
         url: "Gist url"
         user: "User email"
-      gist:
-        url: "Gist url"
-
-  tests_mailer:
-    completed_test:
-      subject: "You just completed the TestGuru test!"
 
   services:
     gist:

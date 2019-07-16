@@ -49,7 +49,7 @@ ru:
       gist: "Gist"
       next: "Далее"
     gist:
-      success: "Gist был успешно сохранен, <a href=%{url} target=_blank>Gist</a>!"
+      success: "Gist был успешно сохранен %{link}!"
       failure: "Произошла ошибка при сохранении gist"
 
   admin:
@@ -84,12 +84,6 @@ ru:
         question: "Вопрос"
         url: "Gist url"
         user: "email пользователя"
-      gist:
-        url: "Gist url"
-
-  tests_mailer:
-    completed_test:
-      subject: "Вы успешно завершили тест на TestGuru!"
 
   services:
     gist:

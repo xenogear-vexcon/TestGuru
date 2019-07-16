@@ -20,10 +20,11 @@ class TestPassagesController < ApplicationController
 
   def gist
     result = GistQuestionService.new(@test_passage.current_question)
+    link = "<a href=\"#{url_for(result.url)}\">gist</a>"
 
     if result.success?
       Gist.create!(url: result.url, user: @test_passage.user, question: @test_passage.current_question)
-      flash[:notice] = t('.success', url: result.url)
+      flash[:notice] = t('.success', link: link)
     else
       flash[:alert] = t('.failure')
     end
