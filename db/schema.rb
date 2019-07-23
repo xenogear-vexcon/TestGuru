@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_23_084258) do
+ActiveRecord::Schema.define(version: 2019_07_06_201224) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2019_06_23_084258) do
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "gists", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "question_id", null: false
+    t.string "url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_gists_on_question_id"
+    t.index ["user_id"], name: "index_gists_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -60,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_06_23_084258) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name", default: "User", null: false
     t.string "email", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -78,7 +88,7 @@ ActiveRecord::Schema.define(version: 2019_06_23_084258) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "type", default: "User", null: false
-    t.integer "age"
+    t.integer "age", default: 20, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
