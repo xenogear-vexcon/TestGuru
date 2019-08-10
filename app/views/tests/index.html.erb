@@ -1,14 +1,23 @@
-<h1><%= t('.header') %></h1>
-<br>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-8">
+    <h1><%= t('.header') %></h1>
 
-<% @test.each do |test| %>
-  <div class="alert alert-light">
-    <h3><%= t('.test') %>: <%= test.title %></h3>
-    <p><%= t('.level') %>: <%= test.level %></p>
-    <p><%= t('.count') %>: <%= test.questions.count %></p>
-    <% if user_signed_in? %>
-      <%= button_to t('.pass'), start_test_path(test), :class => 'btn btn-success' %>
-    <% end %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="sort-by-title pointer">
+            <%= t('.title') %>
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>
+          <th scope="col"><%= t('.level') %></th>
+          <th scope="col"><%= t('.count') %></th>
+          <th scope="col"><%= t('.actions') %></th>
+        </tr>
+      </thead>
+
+    <%= render @tests %>
+
+    </table>
   </div>
-  <hr>
-<% end %>
+</div>

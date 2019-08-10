@@ -1,22 +1,30 @@
-<h1><%= t('.header') %></h1>
-<br>
-<p>
-  <% if user_signed_in? %>
-    <%= link_to t('.new_test'), new_admin_test_path, :class => "btn btn-warning" %>
-  <% end %>
-</p>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-8">
+    <h1><%= t('.header') %></h1>
+    <p>
+      <%= link_to t('.gists'), admin_gists_path, class: 'nav-link' %>
+    </p>
 
-<% @test.each do |test| %>
-  <div class="alert alert-light">
-    <h3>Тест: <%= test.title %></h3>
-    <p>Уровень: <%= test.level %></p>
-    <p>Количество вопросов: <%= test.questions.count %></p>
+    <p>
+      <%= link_to t('.new'), new_admin_test_path, class: 'nav-link' %>
+    </p>
 
-    <%= link_to t('.show'), admin_test_path(test), :class => 'btn btn-outline-primary' %>
-    <% if user_signed_in? %>
-    <%= link_to t('.edit'), edit_admin_test_path(test), :class => "btn btn-warning" %>
-    <%= link_to t('.delete'), admin_test_path(@test), method: :delete, data: {confirm: 'Want to delete a question?'}, :class => "btn btn-danger" %>
-    <% end %>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col" class="sort-by-title pointer">
+          <%= t('.title') %>
+          <%= octicon 'arrow-up', class: 'text-success hide' %>
+          <%= octicon 'arrow-down', class: 'text-success hide' %>
+        </th>
+        <th scope="col"><%= t('.level') %></th>
+        <th scope="col"><%= t('.questions') %></th>
+        <th colspan="4" scope="col" class="text-center"><%= t('.actions') %></th>
+      </tr>
+      </thead>
+
+    <%= render @tests %>
+
+    </table>
   </div>
-  <hr>
-<% end %>
+</div>

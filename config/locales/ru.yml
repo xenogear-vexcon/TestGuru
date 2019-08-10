@@ -38,6 +38,9 @@ ru:
       test: "Название теста"
       level: "Уровень"
       count: "Количество вопросов"
+      actions: "Actions"
+      pass: "Pass the test"
+    test:
       pass: "Пройти тест"
 
   test_passages:
@@ -62,22 +65,32 @@ ru:
         danger: "Тест успешно удален."
       index:
         header: "Доступные тесты"
-        new_test: "Добавить тест"
-        show: "Смотреть"
-        edit: "Редактировать"
-        delete: "Удалить"
+        gists: "Gists"
+        new: "Новый"
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        actions: "Действия"
       show:
         new_question: "Добавить вопрос"
         show: "Смотреть"
         back: "Назад"
       new:
         header: "Добавление нового теста"
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
     questions:
       show:
         new_answer: "Добавить ответ"
         edit: "Редактировать"
         delete: "Удалить"
         back: "Назад"
+      question:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
     gists:
       index:
         header: "Gists пользователя"
