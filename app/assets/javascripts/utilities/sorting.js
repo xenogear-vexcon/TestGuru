@@ -32,7 +32,7 @@ function sortRowsByTitle() {
   sortedTable.classList.add('table')
   sortedTable.appendChild(rows[0])
 
-  for (var i = 1; i < sortedRows.length; i++) {
+  for (var i = 0; i < sortedRows.length; i++) {
     sortedTable.appendChild(sortedRows[i])
   }
 

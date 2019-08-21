@@ -71,6 +71,8 @@ ru:
         level: "Уровень"
         questions: "Вопросы"
         actions: "Действия"
+      edit:
+        edit: "Редактировать"
       show:
         new_question: "Добавить вопрос"
         show: "Смотреть"
@@ -79,8 +81,11 @@ ru:
         header: "Добавление нового теста"
       test:
         show: "Показать"
+        edit_title: "Ред. название"
         edit: "Редактировать"
         delete: "Удалить"
+      form_inline:
+        submit: "Ок"
     questions:
       show:
         new_answer: "Добавить ответ"
