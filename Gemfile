@@ -44,6 +44,7 @@ UI
 
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
+gem 'octicons_helper'
 
 gem "octokit", "~> 4.0"
 
