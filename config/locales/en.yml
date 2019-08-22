@@ -69,6 +69,8 @@ en:
         level: "Level"
         questions: "Questions"
         actions: "Actions"
+      edit:
+        edit: "Edit"
       show:
         new_question: "Create new question"
         show: "Show"
@@ -77,8 +79,11 @@ en:
         header: "Adding new test"
       test:
         show: "Show"
+        edit_title: "Edit title"
         edit: "Edit"
         delete: "Delete"
+      form_inline:
+        submit: "Ok"
     questions:
       show:
         new_answer: "Create new answer"
