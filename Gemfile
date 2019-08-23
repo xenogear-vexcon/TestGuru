@@ -40,7 +40,7 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'rails-i18n', '~> 5.1', '>= 5.1.3'
 gem 'devise-i18n', '~> 1.8'
 
-UI
+#UI
 
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
