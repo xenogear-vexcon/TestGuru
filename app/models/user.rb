@@ -1,7 +1,5 @@
 class User < ApplicationRecord
 
-  # include Auth
-
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :authorship, class_name: "Test", foreign_key: "author_id"
