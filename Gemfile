@@ -51,8 +51,6 @@ gem "octokit", "~> 4.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'mail_form', '~> 1.8'
-
 group :development, :test do
   gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

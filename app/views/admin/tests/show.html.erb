@@ -9,9 +9,17 @@
     <p>
         <strong><%= t('.level') %>:</strong>
         <%= @test.level %>
-
-    <%= link_to t('.new_question'), new_admin_test_question_path(@test), class: 'nav-link mt-3' %>
-
+    <div>
+      <%= link_to t('.new_question'), new_admin_test_question_path(@test), class: 'btn btn-sm btn-outline-secondary' %>
+      <%= link_to t('.edit'), edit_admin_test_path(@test), class: 'btn btn-sm btn-outline-secondary' %>
+      <%= link_to t('.delete'),
+                  admin_test_path(@test),
+                  method: :delete,
+                  data: { confirm: t('navigation.confirm') },
+                  class: 'btn btn-sm btn-outline-danger'%>
+      <%= link_to t('navigation.back'), admin_tests_path, class: 'btn btn-sm btn-outline-secondary' %>
+    <br><br>
+    </div>
     <table class="table table sm">
       <thead>
         <tr>
@@ -23,14 +31,6 @@
       <%= render partial: 'admin/questions/question', collection: @test.questions %>
 
     </table>
-    <div class="row">
-    <%= link_to t('.edit'), edit_admin_test_path(@test), class: 'nav-link' %>
-    <%= link_to t('.delete'),
-                admin_test_path(@test),
-                method: :delete,
-                data: { confirm: t('navigation.confirm') },
-                class: 'nav-link'%>
-    <%= link_to t('navigation.back'), admin_tests_path, class: 'nav-link' %>
-    </div>
+
   </div>
 </div>

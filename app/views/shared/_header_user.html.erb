@@ -3,17 +3,22 @@
     <div class="col-4 pt-1">
     </div>
     <div class="col-4 text-center">
-      <h2><%= link_to 'TestGuru', root_path, :class => "blog-header-logo text-dark" %></h2>
+      <h2><%= link_to 'TestGuru', root_path, class:"blog-header-logo text-dark" %></h2>
     </div>
     <div class="col-4 d-flex justify-content-end align-items-center">
       <% if user_signed_in? %>
-        
+
         <p class="nav user"><%= t('.welcome') %>, <b><%= current_user.name %>!</b> </p>
-        <%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, :class => "btn btn-sm btn-outline-secondary" %>
-        <%= link_to t('.contact'), new_contact_path, :class => "btn btn-sm btn-outline-secondary" %>
+
+        <% if current_user.admin? %>
+          <%= link_to t('.main_page'), admin_root_path, :class => "btn btn-sm btn-outline-secondary" %>
+        <% end %>
+
+        <%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class:"btn btn-sm btn-outline-secondary" %>
+        <%= link_to t('.contact'), new_contact_path, class:"btn btn-sm btn-outline-secondary" %>
       <% else %>
-        <%= link_to t('.registration'), new_user_registration_path, :class => "btn btn-sm btn-outline-secondary" %>
-        <%= link_to t('.sign_in'), new_user_session_path, :class => "btn btn-sm btn-outline-secondary" %>
+        <%= link_to t('.registration'), new_user_registration_path, class:"btn btn-sm btn-outline-secondary" %>
+        <%= link_to t('.sign_in'), new_user_session_path, class:"btn btn-sm btn-outline-secondary" %>
       <% end %>
     </div>
   </div>
