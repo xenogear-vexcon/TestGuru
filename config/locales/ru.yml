@@ -26,12 +26,15 @@ ru:
       sign_out: "Выйти"
       registration: "Регистрация"
       contact: "Связаться с нами"
+      main_page: "На главную"
     header_admin:
       title: "Панель администратора"
       main_page: "На главную"
       admin_gists: "Gists администратора"
       welcome: "Добро пожаловать"
       sign_out: "Выйти"
+    cancel: "Закрыть"
+    edit: "Редактировать название"
 
   tests:
     index:

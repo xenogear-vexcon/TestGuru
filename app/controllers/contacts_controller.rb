@@ -6,10 +6,9 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    @contact.author = current_user
     
-    if @contact.save
-      ContactsMailer.send_message(@contact, current_user).deliver_now
+    if @contact.valid?
+      ContactsMailer.send_message(contact_params).deliver_now
       flash.now[:notice] = t('.success')
     else
       flash.now[:alert] = t('.failure')
@@ -20,6 +19,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:message)
+    params.require(:contact).permit(:name, :email, :message)
   end
 end

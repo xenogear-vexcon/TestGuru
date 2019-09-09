@@ -24,12 +24,15 @@ en:
       sign_out: "Sign out"
       registration: "Registration"
       contact: "Contact"
+      main_page: "Main page"
     header_admin:
       title: "Admin panel"
       main_page: "Main page"
       admin_gists: "Admin gists"
       welcome: "Welcome"
       sign_out: "Sign out"
+    cancel: "Cancel"
+    edit: "Edit"
 
   tests:
     index:

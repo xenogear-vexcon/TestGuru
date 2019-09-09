@@ -2,18 +2,20 @@
 
 <div class="container_form">
   <div class="contact_form" id="contact">
-    <%= form_for @contact do |f| %>
+    <%= form_with model: @contact, local: true do |f| %>
       <%= render 'shared/errors', resource: @contact %>
-
-      <%= f.label :name %><br>
-      <%= f.text_field :name, required: true %>
-      <br>
-      <%= f.label :email %><br>
-      <%= f.text_field :email, required: true %>
-      <br>
-      <%= f.label :message %><br>
-      <%= f.text_area :message, as: :text %>
-      <br><br>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: "Enter your name", class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label :email %>
+        <%= f.email_field :email, required: true, placeholder: "example@gmail.com", class: 'form-control' %>
+      </p>
+      <p>
+        <%= f.label :message %>
+        <%= f.text_area :message, as: :text, placeholder: "Please enter your message here", class: 'form-control' %>
+      </p>
       <%= f.submit 'Send message', class: "button" %>
     <% end %>
   </div>

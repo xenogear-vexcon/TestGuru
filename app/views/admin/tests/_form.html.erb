@@ -2,7 +2,7 @@
 <%= render 'shared/errors', resource: @test %>
   <p>
     <%= form.label :title %>
-    <%= form.text_field :title, id: :test_title, class: 'form-control' %>
+    <%= form.text_field :title, id: :test_title %>
   </p>
   <p>
     <%= form.label :level %>
@@ -11,12 +11,6 @@
   <p>
     <%= form.label :category_id %>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true%>
-  </p>
-
-  <!-- на время теста -->
-  <p>
-    <%= form.label :author_id %>
-    <%= form.collection_select :author_id, User.all, :id, :name, prompt: true%>
   </p>
 
   <p><%= form.submit %></p>

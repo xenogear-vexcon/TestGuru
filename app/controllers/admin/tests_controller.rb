@@ -1,7 +1,7 @@
 class Admin::TestsController < Admin::BaseController
 
   before_action :find_tests, only: %i[index update_inline]
-  before_action :find_test, only: %i[show edit update destroy update_inline]
+  before_action :find_test, only: %i[show edit update destroy update_inline start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.authorship.new(test_params)
     
     if @test.save
-      redirect_to admin_tests_path(@test), notice: t.('.success')
+      redirect_to admin_test_path(@test)
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to admin_tests_path(@test), notice: t.('.success')
+      redirect_to admin_test_path(@test)
     else
       render 'edit'
     end
@@ -43,7 +43,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    redirect_to admin_tests_path, notice: t.('.danger')
+    redirect_to admin_tests_path
   end
 
   private
