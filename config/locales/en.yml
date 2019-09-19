@@ -23,12 +23,16 @@ en:
       sign_in: "Sign in"
       sign_out: "Sign out"
       registration: "Registration"
+      contact: "Contact"
+      main_page: "Main page"
     header_admin:
       title: "Admin panel"
       main_page: "Main page"
       admin_gists: "Admin gists"
       welcome: "Welcome"
       sign_out: "Sign out"
+    cancel: "Cancel"
+    edit: "Edit"
 
   tests:
     index:
@@ -52,6 +56,13 @@ en:
     gist:
       success: "Gist was successfully created, %{link}!"
       failure: "An error occurred while saving gist"
+
+  contacts:
+    create:
+      get_back: "We'll get back to you soon."
+      gratitude: "Thank you for your message!"
+      success: "Message sent"
+      failure: "Cann't send message"
 
   admin:
     tests:

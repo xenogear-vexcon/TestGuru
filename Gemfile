@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use pg as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -40,7 +40,7 @@ gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'rails-i18n', '~> 5.1', '>= 5.1.3'
 gem 'devise-i18n', '~> 1.8'
 
-UI
+#UI
 
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
@@ -55,7 +55,7 @@ group :development, :test do
   gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'ffaker', '~> 2.11.0'
+  # gem 'ffaker', '~> 2.11.0'
 end
 
 group :development do

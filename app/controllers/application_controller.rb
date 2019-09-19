@@ -13,14 +13,14 @@ class ApplicationController < ActionController::Base
     user.admin? ? admin_tests_path : tests_path
   end
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:age])
-  end
-
   private
 
   def find_locale
     I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
 end

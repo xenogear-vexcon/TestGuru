@@ -25,12 +25,16 @@ ru:
       sign_in: "Войти"
       sign_out: "Выйти"
       registration: "Регистрация"
+      contact: "Связаться с нами"
+      main_page: "На главную"
     header_admin:
       title: "Панель администратора"
       main_page: "На главную"
       admin_gists: "Gists администратора"
       welcome: "Добро пожаловать"
       sign_out: "Выйти"
+    cancel: "Закрыть"
+    edit: "Редактировать название"
 
   tests:
     index:
@@ -54,6 +58,13 @@ ru:
     gist:
       success: "Gist был успешно сохранен %{link}!"
       failure: "Произошла ошибка при сохранении gist"
+
+  contacts:
+    create:
+      get_back: "Мы вам скоро ответим"
+      gratitude: "Спасибо вам за сообщение!"
+      success: "Сообщение отправлено"
+      failure: "Невозможно отправить сообщение!"
 
   admin:
     tests:
