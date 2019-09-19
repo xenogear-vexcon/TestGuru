@@ -1,0 +1,23 @@
+<%= form_with model: [:admin, @badge], html: { multipart: true }, local: true do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+  <div class="form-group">
+
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= form.label :rule %><br>
+      <%= form.select :rule, Badge::BADGE_RULES.map, prompt: true, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= form.label :file %><br>
+      <%= form.file_field :file, class: 'form-control' %>
+    </p>
+
+    <p><%= form.submit class: 'btn btn-primary'%></p>
+    <p><%= link_to 'Back', admin_badges_path, class: "btn btn-warning" %></p>
+  </div>
+<% end %>

@@ -1,17 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h3>
-	<%= @answer.question.body %>
-</h3>
+<h3><%= t('.question') %>: <%= @answer.question.body %></h3>
 
 <p>
-  <strong>Body:</strong>
+  <strong><%= t('.body') %></strong>
   <%= @answer.body %>
 </p>
 <p>
-  <strong>Correct:</strong>
+  <strong><%= t('.correct') %>:</strong>
   <%= @answer.correct %>
 </p>
 
-<%= link_to 'Edit', edit_admin_answer_path(@answer), :class => "btn btn-warning" %>
-<%= link_to 'Back', admin_question_path(@answer.question), :class => "btn btn-warning"%>
+<%= link_to t('.edit'), edit_admin_answer_path(@answer), class: "btn btn-sm btn-outline-secondary" %>
+<%= link_to t('.back'), admin_question_path(@answer.question), class: "btn btn-sm btn-outline-dark"%>

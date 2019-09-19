@@ -11,7 +11,8 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
-      TestMailer.completed_test(@test_passage).deliver_now
+      get_badges(@test_passage)
+      TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
@@ -30,6 +31,15 @@ class TestPassagesController < ApplicationController
     end
 
     redirect_to @test_passage
+  end
+
+  def get_badges(test_passage)
+    badges = BadgeService.new(test_passage).call
+
+    unless badges.empty?
+      current_user.badges << badges
+      flash[:notice] = t('badge.success')
+    end
   end
 
   private

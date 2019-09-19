@@ -6,20 +6,20 @@
       <h2><%= link_to 'TestGuru', root_path, class:"blog-header-logo text-dark" %></h2>
     </div>
     <div class="col-5 d-flex justify-content-end align-items-center">
+      
       <% if user_signed_in? %>
-
         <p class="alert alert-success"><%= t('.welcome') %>, <b><%= current_user.name %>!</b> </p>
 
         <% if current_user.admin? %>
           <p><%= link_to t('.main_page'), admin_root_path, :class => "btn btn-sm btn-outline-secondary" %></p>
         <% end %>
-
+        <p><%= link_to t('.badges'), badges_path, class:"btn btn-sm btn-outline-secondary" %></p>
         <p><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class:"btn btn-sm btn-outline-secondary" %></p>
       <% else %>
         <p><%= link_to t('.registration'), new_user_registration_path, class:"btn btn-sm btn-outline-secondary" %></p>
         <p><%= link_to t('.sign_in'), new_user_session_path, class:"btn btn-sm btn-outline-secondary" %></p>
       <% end %>
-      <p><%= link_to t('.contact'), new_contact_path, class:"btn btn-sm btn-outline-secondary" %></p>
+      <p><%= link_to t('.contact'), contact_path, class:"btn btn-sm btn-outline-secondary" %></p>
     </div>
   </div>
   <hr>

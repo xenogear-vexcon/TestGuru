@@ -13,6 +13,20 @@ class ApplicationController < ActionController::Base
     user.admin? ? admin_tests_path : tests_path
   end
 
+  def contact; end
+
+  def create_feedback
+    ContactsMailer.send_message(contact_params).deliver_now
+    # if valid?
+    #   flash.now[:notice] = t('.success')
+    # else
+    #   flash.now[:alert] = t('.failure')
+    #   redirect_to :contact
+    # end
+    redirect_to root_path
+    flash.now[:success] = t('.success')
+  end
+
   private
 
   def find_locale
@@ -21,6 +35,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
+
+  def contact_params
+    params.permit(:name, :email, :message)
   end
 
 end

@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
+# User.destroy_all
 Category.destroy_all
 Test.destroy_all
 Question.destroy_all
@@ -25,16 +25,16 @@ Answer.destroy_all
 #     password: Random.rand(1000..9999),
 #   }
 # end
-user = User.create!( name: 'Slevin Kelevra', email: 'example@mail.com', password: '123456')
-admin = Admin.create!( name: 'John', age: 30, email: 'admin@mail.com', password: '123456' )
+# user = User.create!( name: 'Slevin Kelevra', email: 'example@gmail.com', password: '123456')
+# admin = Admin.create!( name: 'John', age: 30, email: 'admin@gmail.com', password: '123456' )
 
 ruby = Category.create!(title: "Ruby" )
 html = Category.create!(title: "HTML/CSS" )
 
-test1 = Test.create!(title: "Ruby intro", level: 1, category_id: ruby.id, author_id: user.id)
-test2 = Test.create!(title: "Ruby medium", level: 3, category_id: ruby.id, author_id: user.id)
-test3 = Test.create!(title: "HTML", level: 2, category_id: html.id, author_id: user.id)
-test4 = Test.create!(title: "CSS", level: 4, category_id: html.id, author_id: user.id)
+test1 = Test.create!(title: "Ruby intro", level: 1, category_id: ruby.id, author_id: User.first.id)
+test2 = Test.create!(title: "Ruby medium", level: 3, category_id: ruby.id, author_id: User.first.id)
+test3 = Test.create!(title: "HTML", level: 2, category_id: html.id, author_id: User.first.id)
+test4 = Test.create!(title: "CSS", level: 4, category_id: html.id, author_id: User.first.id)
 
 questions = Question.create!(
   [{ body: "Can you call a private method outside a Ruby class using its object?", test_id: test1.id },

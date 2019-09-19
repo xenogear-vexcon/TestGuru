@@ -1,0 +1,15 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-8">
+    <h1><%= t('.header') %></h1>
+    <br>
+    <%= link_to t('.new'), new_admin_badge_path, class: 'btn btn-sm btn-outline-secondary' %>
+    <%= link_to t('.back'), admin_tests_path, class: "btn btn-sm btn-outline-dark" %>
+    <%= render 'shared/errors', resource: @badge %>
+    <br><br>
+    <table class="table">
+
+    <%= render @badges %>
+
+    </table>
+  </div>
+</div>

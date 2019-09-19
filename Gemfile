@@ -46,6 +46,11 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'octicons_helper'
 
+#loading images
+gem 'carrierwave', '~> 2.0', '>= 2.0.1'
+gem 'mini_magick', '~> 4.9', '>= 4.9.5'
+gem 'fog', '~> 2.2'
+
 gem "octokit", "~> 4.0"
 
 # Reduces boot times through caching; required in config/boot.rb

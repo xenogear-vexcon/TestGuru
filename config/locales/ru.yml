@@ -27,6 +27,7 @@ ru:
       registration: "Регистрация"
       contact: "Связаться с нами"
       main_page: "На главную"
+      badges: "Награды"
     header_admin:
       title: "Панель администратора"
       main_page: "На главную"
@@ -35,6 +36,11 @@ ru:
       sign_out: "Выйти"
     cancel: "Закрыть"
     edit: "Редактировать название"
+
+  badges:
+    index:
+      header: "Награды"
+      back: "Назад"
 
   tests:
     index:
@@ -59,12 +65,9 @@ ru:
       success: "Gist был успешно сохранен %{link}!"
       failure: "Произошла ошибка при сохранении gist"
 
-  contacts:
-    create:
-      get_back: "Мы вам скоро ответим"
-      gratitude: "Спасибо вам за сообщение!"
-      success: "Сообщение отправлено"
-      failure: "Невозможно отправить сообщение!"
+  application:
+    create_feedback:
+      success: "Сообщение успешно отправлено! Мы вам скоро ответим!"
 
   admin:
     tests:
@@ -78,6 +81,7 @@ ru:
         header: "Доступные тесты"
         gists: "Gists"
         new: "Новый"
+        badges: "Награды"
         title: "Название"
         level: "Уровень"
         questions: "Вопросы"
@@ -85,7 +89,13 @@ ru:
       edit:
         edit: "Редактировать"
       show:
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        actions: "Действия"
         new_question: "Добавить вопрос"
+        edit: "Редактировать"
+        delete: "Удалить"
         show: "Смотреть"
         back: "Назад"
       new:
@@ -98,6 +108,9 @@ ru:
       form_inline:
         submit: "Ок"
     questions:
+      form:
+        back: "Назад"
+        question: "Вопрос"
       show:
         new_answer: "Добавить ответ"
         edit: "Редактировать"
@@ -107,12 +120,38 @@ ru:
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+      show:
+        question: "Вопрос"
+        body: "Ответ"
+        correct: "Правильность"
+        edit: "Редактировать"
+        back: "Назад"
+      form:
+        body: "Ответ"
+        correct: "Правильный?"
+        back: "Назад"
+      edit:
+        title: "Редактировать ответ"
+        question: "Вопрос"
+      new:
+        new: "Новый ответ"
+        question: "Вопрос"
     gists:
       index:
         header: "Gists пользователя"
         question: "Вопрос"
         url: "Gist url"
         user: "email пользователя"
+    badges:
+      index:
+        header: "Награды"
+        new: "Создать"
+        back: "Назад"
 
   services:
     gist:

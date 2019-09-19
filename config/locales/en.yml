@@ -25,6 +25,7 @@ en:
       registration: "Registration"
       contact: "Contact"
       main_page: "Main page"
+      badges: "Rewards"
     header_admin:
       title: "Admin panel"
       main_page: "Main page"
@@ -33,6 +34,11 @@ en:
       sign_out: "Sign out"
     cancel: "Cancel"
     edit: "Edit"
+
+  badges:
+    index:
+      header: "Rewards"
+      back: "Back"
 
   tests:
     index:
@@ -57,12 +63,9 @@ en:
       success: "Gist was successfully created, %{link}!"
       failure: "An error occurred while saving gist"
 
-  contacts:
-    create:
-      get_back: "We'll get back to you soon."
-      gratitude: "Thank you for your message!"
-      success: "Message sent"
-      failure: "Cann't send message"
+  application:
+    create_feedback:
+      success: "Message successfully sent! We'll get back to you soon!"
 
   admin:
     tests:
@@ -76,6 +79,7 @@ en:
         header: "Tricky tests"
         gists: "Gists"
         new: "New"
+        badges: "Badges"
         title: "Title"
         level: "Level"
         questions: "Questions"
@@ -83,7 +87,13 @@ en:
       edit:
         edit: "Edit"
       show:
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
         new_question: "Create new question"
+        edit: "Edit"
+        delete: "Delete"
         show: "Show"
         back: "Back"
       new:
@@ -96,6 +106,9 @@ en:
       form_inline:
         submit: "Ok"
     questions:
+      form:
+        back: "Back"
+        question: "Question"
       show:
         new_answer: "Create new answer"
         edit: "Edit"
@@ -105,12 +118,38 @@ en:
         show: "Show"
         edit: "Edit"
         delete: "Delete"
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      show:
+        question: "Question"
+        body: "Answer"
+        correct: "Correctness"
+        edit: "Edit"
+        back: "Back"
+      form:
+        body: "Body"
+        correct: "Correct?"
+        back: "Back"
+      edit:
+        title: "Editing Answer"
+        question: "Question"
+      new:
+        new: "New answer"
+        question: "Question"
     gists:
       index:
         header: "Users Gists"
         question: "Question"
         url: "Gist url"
         user: "User email"
+    badges:
+      index:
+        header: "Badges"
+        new: "New"
+        back: "Back"
 
   services:
     gist:
