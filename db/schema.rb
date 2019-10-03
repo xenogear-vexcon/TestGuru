@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_103523) do
+ActiveRecord::Schema.define(version: 2019_10_02_131612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,20 +47,25 @@ ActiveRecord::Schema.define(version: 2019_09_19_103523) do
 
   create_table "badges", force: :cascade do |t|
     t.string "title", null: false
-    t.string "file"
     t.string "rule", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "file_file_name"
-    t.string "file_content_type"
-    t.bigint "file_file_size"
-    t.datetime "file_updated_at"
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "message"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
   create_table "gists", force: :cascade do |t|
@@ -82,13 +87,13 @@ ActiveRecord::Schema.define(version: 2019_09_19_103523) do
   end
 
   create_table "test_passages", force: :cascade do |t|
-    t.integer "correct_answers", default: 0
     t.bigint "test_id"
     t.bigint "user_id"
     t.bigint "current_question_id"
     t.integer "correct_questions", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "score", default: 0
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
@@ -143,6 +148,7 @@ ActiveRecord::Schema.define(version: 2019_09_19_103523) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions"
+  add_foreign_key "contacts", "users"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"

@@ -32,8 +32,6 @@ en:
       admin_gists: "Admin gists"
       welcome: "Welcome"
       sign_out: "Sign out"
-    cancel: "Cancel"
-    edit: "Edit"
 
   badges:
     index:

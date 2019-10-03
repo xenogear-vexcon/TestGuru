@@ -47,9 +47,12 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'octicons_helper'
 
 #loading images
-gem 'carrierwave', '~> 2.0', '>= 2.0.1'
-gem 'mini_magick', '~> 4.9', '>= 4.9.5'
-gem 'fog', '~> 2.2'
+# gem 'carrierwave', '~> 2.0', '>= 2.0.1'
+# gem 'mini_magick', '~> 4.9', '>= 4.9.5'
+# gem 'fog', '~> 2.2'
+gem "aws-sdk-s3", require: false
+gem 'image_processing', '~> 1.9', '>= 1.9.3'
+gem 'active_storage_validations', '~> 0.8.3'
 
 gem "octokit", "~> 4.0"
 

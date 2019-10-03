@@ -8,9 +8,7 @@ class BadgeService
   end
 
   def call
-    Badge.all.select do |badge|
-      send("#{badge.rule}?", badge.rule)
-    end
+    @badges.select { |badge| send("#{badge.rule}?", badge.title) }
   end
 
   private
@@ -23,13 +21,13 @@ class BadgeService
     return unless category == @test.category.title
 
     ids = Test.sort_by_category(category).ids
-    ids.count == @user.test_passages.where(test_id: ids)
+    ids.count == @user.test_passages.where(test_id: ids).success.uniq.count
   end
 
   def tests_by_level_finished?(level)
     return unless level.to_i == @test.level
 
-    ids = Test.where(level: level).ids
-    ids.count == @user.test_passages.where(test_id: ids)
+    test_ids = Test.where(level: @test.level).ids
+    test_ids.size == @user.test_passages.where(test_id: test_ids).success.uniq.count
   end
 end

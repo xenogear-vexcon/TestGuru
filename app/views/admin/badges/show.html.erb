@@ -8,9 +8,9 @@
       <%= @badge.rule %>
     </p>
 
-    <p>
+    <p style="width:200px; height:auto">
       <strong><%= t('.image') %>:</strong><br>
-      <%= image_tag @badge.file.url %>
+      <%= image_tag(@badge.image, style:'width:100%') %>
     </p>
 
     <p>

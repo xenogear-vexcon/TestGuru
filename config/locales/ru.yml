@@ -34,8 +34,6 @@ ru:
       admin_gists: "Gists администратора"
       welcome: "Добро пожаловать"
       sign_out: "Выйти"
-    cancel: "Закрыть"
-    edit: "Редактировать название"
 
   badges:
     index:

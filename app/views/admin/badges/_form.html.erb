@@ -3,18 +3,20 @@
   <div class="form-group">
 
     <p>
-      <%= form.label :title %><br>
-      <%= form.text_field :title, class: 'form-control' %>
-    </p>
-
-    <p>
       <%= form.label :rule %><br>
-      <%= form.select :rule, Badge::BADGE_RULES.map, prompt: true, class: 'form-control' %>
+      <%= form.select :rule, Badge::BADGE_RULES, id: :badge_rule, class: 'form-control rule' %>
+      <%= link_to "confirm", "",
+                  class: 'badge-inline-link' %>
     </p>
 
     <p>
-      <%= form.label :file %><br>
-      <%= form.file_field :file, class: 'form-control' %>
+      <%= form.label :title %><br>
+      <%= form.text_field :title, id: :badge_title, class: 'form-control title', placeholder: "Title" %>
+    </p>
+
+    <p>
+      <%= form.label :image %><br>
+      <%= form.file_field :image, direct_upload: true, class: 'form-control' %>
     </p>
 
     <p><%= form.submit class: 'btn btn-primary'%></p>

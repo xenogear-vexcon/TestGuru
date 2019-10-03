@@ -6,9 +6,18 @@
     <%= link_to t('.back'), admin_tests_path, class: "btn btn-sm btn-outline-dark" %>
     <%= render 'shared/errors', resource: @badge %>
     <br><br>
-    <table class="table">
 
-    <%= render @badges %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"><%= t('.image') %></th>
+          <th scope="col"><%= t('.title') %></th>
+          <th scope="col"><%= t('.rule') %></th>
+          <th colspan="4" scope="col" class="text-center"><%= t('.actions') %></th>
+        </tr>
+      </thead>
+
+      <%= render @badges %>
 
     </table>
   </div>
