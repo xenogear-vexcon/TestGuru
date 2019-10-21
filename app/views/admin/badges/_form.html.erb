@@ -2,12 +2,10 @@
   <%= render 'shared/errors', resource: @badge %>
   <div class="form-group">
 
-    <p>
+    <div class='badge-inline-link'>
       <%= form.label :rule %><br>
       <%= form.select :rule, Badge::BADGE_RULES, id: :badge_rule, class: 'form-control rule' %>
-      <%= link_to "confirm", "",
-                  class: 'badge-inline-link' %>
-    </p>
+    </div><br>
 
     <p>
       <%= form.label :title %><br>

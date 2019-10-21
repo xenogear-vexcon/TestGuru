@@ -11,15 +11,15 @@
         <p class="alert alert-success"><%= t('.welcome') %>, <b><%= current_user.name %>!</b> </p>
 
         <% if current_user.admin? %>
-          <p><%= link_to t('.main_page'), admin_root_path, :class => "btn btn-sm btn-outline-secondary" %></p>
+          <%= link_to t('.main_page'), admin_root_path, :class => "btn btn-sm btn-outline-secondary" %>
         <% end %>
-        <p><%= link_to t('.badges'), badges_path, class:"btn btn-sm btn-outline-secondary" %></p>
-        <p><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class:"btn btn-sm btn-outline-secondary" %></p>
+        <%= link_to t('.badges'), badges_path, class:"btn btn-sm btn-outline-secondary" %>
+        <%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class:"btn btn-sm btn-outline-secondary" %>
       <% else %>
-        <p><%= link_to t('.registration'), new_user_registration_path, class:"btn btn-sm btn-outline-secondary" %></p>
-        <p><%= link_to t('.sign_in'), new_user_session_path, class:"btn btn-sm btn-outline-secondary" %></p>
+        <%= link_to t('.registration'), new_user_registration_path, class:"btn btn-sm btn-outline-secondary" %>
+        <%= link_to t('.sign_in'), new_user_session_path, class:"btn btn-sm btn-outline-secondary" %>
       <% end %>
-      <p><%= link_to t('.contact'), contact_path, class:"btn btn-sm btn-outline-secondary" %></p>
+      <%= link_to t('.contact'), contact_path, class:"btn btn-sm btn-outline-secondary" %>
     </div>
   </div>
   <hr>

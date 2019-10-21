@@ -1,12 +1,12 @@
-document.addEventListener('turbolinks:load', function() {
-  var password = document.querySelector('.password_form')
-  var password_confirmation = document.querySelector('.password_confirmation_form')
+document.addEventListener('turbolinks:load', function () {
+  var password = document.querySelector('.password_form');
+  var password_confirmation = document.querySelector('.password_confirmation_form');
 
   if (password && password_confirmation) {
-    password.addEventListener('input', fieldColor)
-    password_confirmation.addEventListener('input', fieldColor)
+    password.addEventListener('input', fieldColor);
+    password_confirmation.addEventListener('input', fieldColor);
   }
-})
+});
 
 function fieldColor() {
   if (password.value === password_confirmation.value) {
