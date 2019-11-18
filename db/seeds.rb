@@ -1,32 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# User.destroy_all
 Category.destroy_all
 Test.destroy_all
 Question.destroy_all
 Answer.destroy_all
 
-# USERS = 10
-# CATEGORIES = 5
-# TESTS = 10
-# QUESTIONS = 30
-# ANSWERS = 50
-# CORRECTNESS = true
-
-# hash_users = USERS.times.map.with_index do |num|
-#   {
-#     name: FFaker::Internet.user_name[0...16],
-#     email: FFaker::Internet.safe_email,
-#     password: Random.rand(1000..9999),
-#   }
-# end
-# user = User.create!( name: 'Slevin Kelevra', email: 'example@gmail.com', password: '123456')
-# admin = Admin.create!( name: 'John', age: 30, email: 'admin@gmail.com', password: '123456' )
+admin = Admin.create!( name: 'John', age: 30, email: 'admin@gmail.com', password: '123456' )
+admin.confirm
 
 ruby = Category.create!(title: "Ruby" )
 html = Category.create!(title: "HTML/CSS" )
@@ -97,3 +75,4 @@ answers = Answer.create!(
    { body: "direction", correct: false, question_id: questions[11].id },
    { body: "margin", correct: false, question_id: questions[11].id },
 ])
+

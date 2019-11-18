@@ -17,24 +17,18 @@ class ApplicationController < ActionController::Base
 
   def create_feedback
     ContactsMailer.send_message(contact_params).deliver_now
-    # if valid?
-    #   flash.now[:notice] = t('.success')
-    # else
-    #   flash.now[:alert] = t('.failure')
-    #   redirect_to :contact
-    # end
     redirect_to root_path
     flash.now[:success] = t('.success')
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
   private
 
   def find_locale
     I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
-  end
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
   def contact_params

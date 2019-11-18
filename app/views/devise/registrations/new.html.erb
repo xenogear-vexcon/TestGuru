@@ -20,18 +20,18 @@
         <% if @minimum_password_length %>
         <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
         <% end %><br />
-        <%= f.password_field :password, placeholder: "new-password", class: 'password_form' %>
+        <%= f.password_field :password, placeholder: "new-password", class: 'password-form' %>
       </p>
 
       <p>
-        <%= f.label :password_confirmation %><br />
-        <%= octicon 'check', class: 'text-success hide' %>
-        <%= octicon 'alert', class: 'text-danger hide' %>
-        <%= f.password_field :password_confirmation, placeholder: "new-password", class: 'password_confirmation_form' %>
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation, placeholder: "new-password", class: 'password-confirmation-form' %>
+        <%= octicon 'check', class: 'text-success hide', id: 'octicon-check' %>
+        <%= octicon 'alert', class: 'text-danger hide', id: 'octicon-alert' %>
       </p>
       <br>
       <div>
-        <%= f.submit t('.sign_up'), class: 'btn btn-sm btn-outline-secondary' %>
+        <%= f.submit t('.sign_up'), class: 'btn btn-sm btn-outline-secondary registration-confirm' %>
       </div>
     <% end %>
     <div class="mt-1">

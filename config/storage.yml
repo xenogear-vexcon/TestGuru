@@ -5,7 +5,6 @@ test:
 local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
-  # server: localhost:5000
 
 amazon:
   service: S3
