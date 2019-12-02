@@ -1,4 +1,9 @@
 en:
+  assets:
+    javascripts:
+      utilities:
+        badge_inline:
+          first_try: "First try"
   helpers:
     submit:
       test:

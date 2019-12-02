@@ -4,30 +4,35 @@ class BadgeService
     @test_passage = test_passage
     @user = test_passage.user
     @test = test_passage.test
-    @badges = Badge.where.not(id: @user.badges.ids)
   end
 
   def call
-    @badges.select { |badge| send("#{badge.rule}?", badge.title) }
+    Badge.all.select { |badge| send("#{badge.rule}?", badge.option) }
   end
 
   private
 
-  def first_attempt?(_params)
-    @user.test_passages.where(test: @test).count == 1
+  def first_attempt?(option)
+    test_passage_uniq?
   end
 
   def tests_by_category_finished?(category)
-    return unless category == @test.category.title
+    tests_by_category = Test.by_category(category).count
+    user_tests_by_category = @user.tests.by_category(category).uniq.count
 
-    ids = Test.sort_by_category(category).ids
-    ids.count == @user.test_passages.where(test_id: ids).success.uniq.count
+    test_passage_uniq? && (tests_by_category == user_tests_by_category)
+    
   end
 
   def tests_by_level_finished?(level)
-    return unless level.to_i == @test.level
-
-    test_ids = Test.where(level: @test.level).ids
-    test_ids.size == @user.test_passages.where(test_id: test_ids).success.uniq.count
+    tests_by_level = Test.where(level: level).count
+    user_tests_by_level = @user.tests.where(level: level).count
+    
+    test_passage_uniq? && (tests_by_level == user_tests_by_level)
   end
+
+  def test_passage_uniq?
+    TestPassage.success.where(user_id: @user.id, test_id: @test.id).count == 1
+  end
+
 end

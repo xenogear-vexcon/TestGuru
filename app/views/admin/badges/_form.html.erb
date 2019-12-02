@@ -4,12 +4,12 @@
 
     <div class='badge-inline-link'>
       <%= form.label :rule %><br>
-      <%= form.select :rule, Badge::BADGE_RULES, id: :badge_rule, class: 'form-control rule' %>
+      <%= form.select :rule, options_for_select(badge_rules), id: :badge_rule, class: 'form-control rule' %>
     </div><br>
 
     <p>
       <%= form.label :title %><br>
-      <%= form.text_field :title, id: :badge_title, class: 'form-control title', placeholder: "Title" %>
+      <%= form.select :title, options_for_select(badge_title), id: :badge_title, class: 'form-control title', placeholder: "Title" %>
     </p>
 
     <p>

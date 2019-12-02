@@ -2,9 +2,15 @@ Category.destroy_all
 Test.destroy_all
 Question.destroy_all
 Answer.destroy_all
+TestPassage.destroy_all
+Badge.destroy_all
+Gist.destroy_all
+User.destroy_all
 
 admin = Admin.create!( name: 'John', age: 30, email: 'admin@gmail.com', password: '123456' )
 admin.confirm
+user = User.create!( name: 'Slevin Kelevra', email: 'example@gmail.com', password: '123456')
+user.confirm
 
 ruby = Category.create!(title: "Ruby" )
 html = Category.create!(title: "HTML/CSS" )

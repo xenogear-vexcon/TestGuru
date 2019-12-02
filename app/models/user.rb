@@ -23,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def test_passage(test)
-    test_passages.order(id: :desc).find_by(test: test)
+    test_passages.order(id: :desc).find_by(test: test.id)
   end
 
   def admin?

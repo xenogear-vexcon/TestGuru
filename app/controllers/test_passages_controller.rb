@@ -12,7 +12,9 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       @test_passage.result
-      get_badges(@test_passage)
+      if @test_passage.success?
+        get_badges(@test_passage)
+      end
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -36,11 +38,10 @@ class TestPassagesController < ApplicationController
 
   def get_badges(test_passage)
     badges = BadgeService.new(test_passage).call
-
-    unless badges.empty?
-      current_user.badges << badges
-      flash[:notice] = t('badge.success')
+    badges.each do |badge|
+      current_user.badges << badge
     end
+    flash[:notice] = t('badge.success') if badges.any?
   end
 
   private
