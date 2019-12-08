@@ -1,9 +1,4 @@
 en:
-  assets:
-    javascripts:
-      utilities:
-        badge_inline:
-          first_try: "First try"
   helpers:
     submit:
       test:
@@ -152,7 +147,26 @@ en:
       index:
         header: "Badges"
         new: "New"
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
         back: "Back"
+        image: "Image"
+        title: "Title"
+        rule: "Rule"
+        actions: "Actions"
+      new:
+        header: "Create new badge"
+      form:
+        first_try: "First try"
+        first_try_100: "First try with 100% result"
+        category: "All tests in category"
+        category_100: "All tests in category with 100% result"
+        level: "All tests by level"
+        level_100: "All tests by level with 100% result"
+      show:
+        badge: "Badge"
+        back: "Back to badges"
 
   services:
     gist:

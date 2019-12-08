@@ -1,9 +1,4 @@
 ru:
-  assets:
-    javascripts:
-      utilities:
-        badge_inline:
-          first_try: "Первая попытка"
   helpers:
     submit:
       test:
@@ -154,7 +149,26 @@ ru:
       index:
         header: "Награды"
         new: "Создать"
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
         back: "Назад"
+        image: "Изображение"
+        title: "Название"
+        rule: "Правило"
+        actions: "Действия"
+      new:
+        header: "Создать новую награду"
+      form:
+        first_try: "Первая попытка"
+        first_try_100: "Первая попытка со 100% результатом"
+        category: "Все тесты в категории"
+        category_100: "Все тесты в категории со 100% результатом"
+        level: "Все тесты по уровню"
+        level_100: "Все тесты по уровню со 100% результатом"
+      show:
+        badge: "Награда"
+        back: "К наградам"
 
   services:
     gist:

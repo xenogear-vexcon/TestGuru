@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_095735) do
     t.string "rule", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "option"
+    t.string "option"
   end
 
   create_table "categories", force: :cascade do |t|

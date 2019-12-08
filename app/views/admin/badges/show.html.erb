@@ -1,31 +1,31 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-4">
 
-    <h1><%= t('.header') %></h1>
+    <h1><%= t('.badge') %></h1>
 
     <p>
-      <strong><%= t('.rule') %>:</strong><br>
+      <strong><%= t('admin.badges.index.rule') %>:</strong><br>
       <%= @badge.rule %>
     </p>
 
     <p style="width:200px; height:auto">
-      <strong><%= t('.image') %>:</strong><br>
+      <strong><%= t('admin.badges.index.image') %>:</strong><br>
       <%= image_tag(@badge.image, style:'width:100%') %>
     </p>
 
     <p>
-      <strong><%= t('.title') %>:</strong><br>
+      <strong><%= t('admin.badges.index.title') %>:</strong><br>
       <%= @badge.title %>
     </p>
 
     <div class="row">
-      <%= link_to t('.edit'), edit_admin_badge_path(@badge), class: 'nav-link' %>
-      <%= link_to t('.delete'),
+      <%= link_to t('admin.badges.index.edit'), edit_admin_badge_path(@badge), class: 'btn btn-sm btn-outline-secondary' %>
+      <%= link_to t('admin.badges.index.delete'),
                   admin_badge_path(@badge),
                   method: :delete,
-                  data: { confirm: t('navigation.confirm') },
-                  class: 'nav-link' %>
-      <%= link_to t('navigation.back'), admin_badges_path, class: 'nav-link' %>
+                  data: { confirm: t('.confirm') },
+                  class: 'btn btn-sm btn-outline-danger' %>
+      <%= link_to t('.back'), admin_badges_path, class: 'btn btn-sm btn-outline-dark' %>
     </div>
 
   </div>

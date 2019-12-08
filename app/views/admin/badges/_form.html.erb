@@ -3,21 +3,21 @@
   <div class="form-group">
 
     <div class='badge-inline-link'>
-      <%= form.label :rule %><br>
+      <%= form.label t('admin.badges.index.rule') %><br>
       <%= form.select :rule, options_for_select(badge_rules), id: :badge_rule, class: 'form-control rule' %>
     </div><br>
 
     <p>
-      <%= form.label :title %><br>
+      <%= form.label t('admin.badges.index.title') %><br>
       <%= form.select :title, options_for_select(badge_title), id: :badge_title, class: 'form-control title', placeholder: "Title" %>
     </p>
 
     <p>
-      <%= form.label :image %><br>
+      <%= form.label t('admin.badges.index.image') %><br>
       <%= form.file_field :image, direct_upload: true, class: 'form-control' %>
     </p>
 
-    <p><%= form.submit class: 'btn btn-primary'%></p>
-    <p><%= link_to 'Back', admin_badges_path, class: "btn btn-warning" %></p>
+    <p><%= form.submit class: 'btn btn-outline-success my-2 my-sm-0'%></p>
+    <p><%= link_to t('admin.badges.index.back'), admin_badges_path, class: "btn btn-sm btn-outline-dark" %></p>
   </div>
 <% end %>
