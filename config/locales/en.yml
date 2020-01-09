@@ -157,13 +157,6 @@ en:
         actions: "Actions"
       new:
         header: "Create new badge"
-      form:
-        first_try: "First try"
-        first_try_100: "First try with 100% result"
-        category: "All tests in category"
-        category_100: "All tests in category with 100% result"
-        level: "All tests by level"
-        level_100: "All tests by level with 100% result"
       show:
         badge: "Badge"
         back: "Back to badges"
@@ -171,3 +164,13 @@ en:
   services:
     gist:
       description: "A question about %{title} from TestGuru"
+
+  first_attempt: "First success attempt"
+  category: "Category"
+  level: "Level"
+  first_try: "First test try"
+  first_try_100: "First try with 100% result"
+  category: "All tests in category"
+  category_100: "All tests in category with 100% result"
+  level: "All tests by level"
+  level_100: "All tests by level with 100% result"

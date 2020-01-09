@@ -5,8 +5,10 @@ class Badge < ApplicationRecord
 
   has_one_attached :image
 
-  validates :title, presence: true
-  validates :title, uniqueness: { scope: :rule, message: "This combination of title and rule already exists." }
+  validates :title, presence: true, uniqueness: true
+  validates :rule, inclusion: { in: %w(tests_by_category_finished first_attempt tests_by_level_finished),
+    message: "%{value} is not a valid rule" }
+  validates :option, uniqueness: { scope: :rule, message: "This combination of option and rule already exists." }
   validates :image, attached: true, content_type: [:png, :jpg, :jpeg]
 
 end

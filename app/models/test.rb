@@ -10,7 +10,7 @@ class Test < ApplicationRecord
   validates :level, numericality: { greater_than_or_equal_to: 0,
                                     only_integer: true }
 
-  default_scope { order(title: :desc) }
+  default_scope { order(level: :asc) }
   scope :easy, -> { where(level: (0..1)) }
   scope :medium, -> { where(level: (2..4)) }
   scope :hard, -> { where(level: (5..Float::INFINITY)) }
