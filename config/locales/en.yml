@@ -160,17 +160,17 @@ en:
       show:
         badge: "Badge"
         back: "Back to badges"
+      form:
+        first_attempt: "First success attempt"
+        tests_by_category_finished: "All tests in category"
+        tests_by_level_finished: "All tests by level"
+        first_try: "First test try"
+        first_try_100: "First try with 100% result"
+        category: "All tests in category"
+        category_100: "All tests in category with 100% result"
+        level: "All tests by level"
+        level_100: "All tests by level with 100% result"
 
   services:
     gist:
       description: "A question about %{title} from TestGuru"
-
-  first_attempt: "First success attempt"
-  category: "Category"
-  level: "Level"
-  first_try: "First test try"
-  first_try_100: "First try with 100% result"
-  category: "All tests in category"
-  category_100: "All tests in category with 100% result"
-  level: "All tests by level"
-  level_100: "All tests by level with 100% result"

@@ -5,7 +5,7 @@
 
     <p>
       <strong><%= t('admin.badges.index.rule') %>:</strong><br>
-      <%= @badge.rule %>
+      <%= t("admin.badges.form.#{@badge.rule}") %>
     </p>
 
     <p style="width:200px; height:auto">
@@ -15,7 +15,7 @@
 
     <p>
       <strong><%= t('admin.badges.index.title') %>:</strong><br>
-      <%= @badge.title %>
+      <%= t("admin.badges.form.#{@badge.title}") %>
     </p>
 
     <div class="row">

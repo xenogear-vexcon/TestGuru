@@ -12,17 +12,18 @@ class BadgeService
 
   private
 
-  def tests_by_category_finished?(category_id, badge_id)
-    return unless @test_passage.success? && category_id.to_i == @test.category_id
+  def check_badge_rule(rule, badge_id)
+    return unless @test_passage.success? && rule.to_i == @test.rule
 
-    tests_by_category = Test.where(category_id: category_id.to_i)
-    user_tests_by_category = @user.test_passages.success.where(test_id: tests_by_category)
+    tests_by_rule = Test.where(rule: rule.to_i)
+    user_tests_by_rule = @user.test_passages.success.where(rule: tests_by_rule)
 
     if @user.user_badges.where(badge_id: badge_id.to_i).any?
       last_badge_date = @user.user_badges.where(badge_id: badge_id.to_i).order(created_at: :asc).last.created_at
-      user_tests_by_category = user_tests_by_category.where("created_at > ?", last_badge_date)
+      user_tests_by_rule = user_tests_by_rule.where("created_at > ?", last_badge_date)
     end
-    tests_by_category.pluck(:id).count == user_tests_by_category.pluck(:id).uniq.count
+
+    tests_by_rule.pluck(:id).count == user_tests_by_rule.pluck(:id).uniq.count
   end
 
   def first_attempt?(option, badge_id)
@@ -32,22 +33,22 @@ class BadgeService
   end
 
   def tests_by_level_finished?(level, badge_id)
-    return unless @test_passage.success? && level.to_i == @test.level
-
-    tests_by_level = Test.where(level: level.to_i).count
-    user_tests_by_level = @user.tests.where(level: level.to_i).count
-    
-    tests_by_level == user_tests_by_level
+    check_badge_rule(level, badge_id)
   end
 
+  def tests_by_category_finished?(category_id, badge_id)
+    check_badge_rule(category_id, badge_id)
+  end
+
+
   def self.badge_rules
-    [ [ I18n.t('first_attempt'), :first_attempt ], [ I18n.t('category'), :tests_by_category_finished ], [ I18n.t('level'), :tests_by_level_finished ] ]
+    [ :first_attempt, :tests_by_category_finished, :tests_by_level_finished ]
   end
 
   def self.badge_titles
-    [ I18n.t('.first_try'), I18n.t('.first_try_100'),
-      I18n.t('.category'), I18n.t('.category_100'),
-      I18n.t('.level'), I18n.t('.level_100') ]
+    [ :first_try, :first_try_100,
+      :category, :category_100,
+      :level, :level_100 ]
   end
 
 end

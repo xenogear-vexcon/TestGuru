@@ -1,7 +1,7 @@
 <tr>
   <td class="align-middle"><%= image_tag badge.image.variant(resize: "100x100") %></td>
-  <td class="align-middle"><%= badge.title %></td>
-  <td class="align-middle"><%= badge.rule %></td>
+  <td class="align-middle"><%= t("admin.badges.form.#{badge.title}") %></td>
+  <td class="align-middle"><%= t("admin.badges.form.#{badge.rule}") %></td>
   <td class="align-middle"><%= link_to t('admin.badges.index.show'), admin_badge_path(badge), class: 'btn btn-sm btn-outline-secondary' %></td>
   <td class="align-middle"><%= link_to t('admin.badges.index.edit'), edit_admin_badge_path(badge), class: 'btn btn-sm btn-outline-secondary' %></td>
   <td class="align-middle">
