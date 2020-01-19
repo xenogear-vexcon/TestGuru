@@ -3,11 +3,6 @@
 
     <h1><%= t('.badge') %></h1>
 
-    <p>
-      <strong><%= t('admin.badges.index.rule') %>:</strong><br>
-      <%= t("admin.badges.form.#{@badge.rule}") %>
-    </p>
-
     <p style="width:200px; height:auto">
       <strong><%= t('admin.badges.index.image') %>:</strong><br>
       <%= image_tag(@badge.image, style:'width:100%') %>
@@ -16,6 +11,16 @@
     <p>
       <strong><%= t('admin.badges.index.title') %>:</strong><br>
       <%= t("admin.badges.form.#{@badge.title}") %>
+    </p>
+
+    <p>
+      <strong><%= t('admin.badges.index.rule') %>:</strong><br>
+      <%= t("admin.badges.form.#{@badge.rule}") %>
+    </p>
+
+    <p>
+      <strong><%= t('admin.badges.index.option') %>:</strong><br>
+      <%= t("admin.badges.form.#{@badge.option}") %>
     </p>
 
     <div class="row">

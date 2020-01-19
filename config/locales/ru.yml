@@ -156,6 +156,7 @@ ru:
         image: "Изображение"
         title: "Название"
         rule: "Правило"
+        option: "Опция"
         actions: "Действия"
       new:
         header: "Создать новую награду"
@@ -172,6 +173,10 @@ ru:
         category_100: "Все тесты в категории со 100% результатом"
         level: "Все тесты по уровню"
         level_100: "Все тесты по уровню со 100% результатом"
+        try_option: "первая попытка"
+        level_option: "уровень"
+        category_option: "категория"
+
   services:
     gist:
       description: "Вопрос по %{title} из TestGuru"

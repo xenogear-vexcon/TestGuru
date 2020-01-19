@@ -154,6 +154,7 @@ en:
         image: "Image"
         title: "Title"
         rule: "Rule"
+        option: "Option"
         actions: "Actions"
       new:
         header: "Create new badge"
@@ -170,6 +171,9 @@ en:
         category_100: "All tests in category with 100% result"
         level: "All tests by level"
         level_100: "All tests by level with 100% result"
+        try_option: "first try"
+        level_option: "level"
+        category_option: "category"
 
   services:
     gist:
