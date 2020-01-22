@@ -10,8 +10,6 @@ class BadgeService
     Badge.all.select { |badge| send("#{badge.rule}?", badge.option, badge.id) }
   end
 
-
-
   private
 
   def first_attempt?(option, badge_id)
@@ -21,7 +19,7 @@ class BadgeService
   end
 
   def tests_by_category_finished?(category_id, badge_id)
-    return unless @test_passage.success? && category_id == @test.category_id
+    return unless @test_passage.success? && category_id.to_i == @test.category_id
 
     tests_by_rule = Test.where(category_id: category_id).ids
     user_tests_by_rule = @user.test_passages.success.where(test_id: tests_by_rule)
@@ -35,7 +33,7 @@ class BadgeService
   end
 
   def tests_by_level_finished?(level, badge_id)
-    return unless @test_passage.success? && level == @test.level
+    return unless @test_passage.success? && level.to_i == @test.level
 
     tests_by_rule = Test.where(level: level).ids
     user_tests_by_rule = @user.test_passages.success.where(test_id: tests_by_rule)
