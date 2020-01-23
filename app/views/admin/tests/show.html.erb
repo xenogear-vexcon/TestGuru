@@ -5,8 +5,12 @@
       <%= @test.title %>
     </p>
     <p>
-        <strong><%= t('.level') %>:</strong>
-        <%= @test.level %>
+      <strong><%= t('tests.index.category') %>:</strong>
+      <%= @test.category.title %>
+    </p>
+    <p>
+      <strong><%= t('.level') %>:</strong>
+      <%= @test.level %>
     </p>
     <div>
       <%= link_to t('.new_question'), new_admin_test_question_path(@test), class: 'btn btn-sm btn-outline-secondary' %>

@@ -1,5 +1,6 @@
 <% unless @test_passage.completed? %>
-  <h2 class='pb-4 mb-4 font-italic border-bottom'><%= t('.test', title: @test_passage.test.title) %></h2>
+  <h2 class='pb-2 font-italic'><%= t('.test', title: @test_passage.test.title) %></h2>
+  <h6 class='pb-4 mb-4 font-italic border-bottom'><%= t('.category', title: @test_passage.test.category.title) %></h6>
   <%= content_tag :div, '', class: 'progress', data: { question_index: @test_passage.question_index, all_questions: @test_passage.test.questions.count } do |x| %>
     <div class='myProgress'>
       <span class='p-2 text-muted'><%= @test_passage.question_index - 1 %> / <%= @test_passage.test.questions.count %></span>

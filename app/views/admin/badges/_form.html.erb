@@ -14,7 +14,7 @@
 
     <p>
       <%= form.label t('admin.badges.index.option') %><br>
-      <%= form.select :option, options_for_select(option), id: :option, class: 'form-control title' %>
+      <%= form.text_field :option, id: :option, class: 'form-control title' %>
     </p>
 
     <p>

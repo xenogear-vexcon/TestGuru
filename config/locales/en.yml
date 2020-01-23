@@ -41,6 +41,7 @@ en:
   tests:
     index:
       header: "Tricky tests"
+      category: "Category"
       title: "Test name"
       level: "Level"
       count: "Questions count"
@@ -54,6 +55,7 @@ en:
       header: "The %{title} test was complited!"
     show:
       test: "Test %{title}"
+      category: "Category %{title}"
       progress: "Progress"
       gist: "Gist Question"
       next: "Next"

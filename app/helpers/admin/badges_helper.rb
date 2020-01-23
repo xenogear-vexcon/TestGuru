@@ -6,7 +6,4 @@ module Admin::BadgesHelper
   def badge_titles
     BadgeService.badge_titles.map{|title| [t(".#{title}"), title]}
   end
-  def option
-    BadgeService.option{|option| [t(".#{option}"), option]}
-  end
 end
