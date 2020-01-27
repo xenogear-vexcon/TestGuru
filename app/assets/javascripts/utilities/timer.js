@@ -13,7 +13,6 @@ document.addEventListener('turbolinks:load', function() {
 			clearInterval(interval);
 			timerValue.style.color="red";
 			timerValue.innerHTML = "time is up!";
-			window.location.href = timerValue.dataset.result;
 		}
 	}
 
