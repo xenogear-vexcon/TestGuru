@@ -1,4 +1,4 @@
-<% unless @test_passage.completed? || !@test_passage.in_time? %>
+<% unless @test_passage.completed? || @test_passage.out_of_time? %>
   
   <h2 class='pb-2 font-italic'><%= t('.test', title: @test_passage.test.title) %></h2>
   <h6 class='pb-4 mb-4 font-italic border-bottom'><%= t('.category', title: @test_passage.test.category.title) %></h6>
