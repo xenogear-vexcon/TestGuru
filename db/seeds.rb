@@ -10,11 +10,12 @@ admin.confirm
 
 ruby = Category.create!(title: "Ruby" )
 html = Category.create!(title: "HTML/CSS" )
+timer = 10
 
-test1 = Test.create!(title: "Ruby intro", level: 1, category_id: ruby.id, author_id: User.first.id)
-test2 = Test.create!(title: "Ruby medium", level: 3, category_id: ruby.id, author_id: User.first.id)
-test3 = Test.create!(title: "HTML", level: 2, category_id: html.id, author_id: User.first.id)
-test4 = Test.create!(title: "CSS", level: 4, category_id: html.id, author_id: User.first.id)
+test1 = Test.create!(title: "Ruby intro", level: 1, category_id: ruby.id, author_id: User.first.id, timer: timer)
+test2 = Test.create!(title: "Ruby medium", level: 3, category_id: ruby.id, author_id: User.first.id, timer: timer)
+test3 = Test.create!(title: "HTML", level: 2, category_id: html.id, author_id: User.first.id, timer: timer)
+test4 = Test.create!(title: "CSS", level: 4, category_id: html.id, author_id: User.first.id, timer: timer)
 
 questions = Question.create!(
   [{ body: "Can you call a private method outside a Ruby class using its object?", test_id: test1.id },

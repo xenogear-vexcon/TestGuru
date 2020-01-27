@@ -10,7 +10,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed?
+    if @test_passage.completed? || !@test_passage.in_time?
       @test_passage.result
       if @test_passage.success?
         get_badges(@test_passage)

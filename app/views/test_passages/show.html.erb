@@ -1,23 +1,15 @@
-<% unless @test_passage.completed? %>
+<% unless @test_passage.completed? || !@test_passage.in_time? %>
+  
   <h2 class='pb-2 font-italic'><%= t('.test', title: @test_passage.test.title) %></h2>
   <h6 class='pb-4 mb-4 font-italic border-bottom'><%= t('.category', title: @test_passage.test.category.title) %></h6>
+  <%= content_tag :span, '', id: :timer, data: { timer: @test_passage.timer, result: result_test_passage_url(@test_passage) } %>
+  <br><br>
   <%= content_tag :div, '', class: 'progress', data: { question_index: @test_passage.question_index, all_questions: @test_passage.test.questions.count } do |x| %>
     <div class='myProgress'>
       <span class='p-2 text-muted'><%= @test_passage.question_index - 1 %> / <%= @test_passage.test.questions.count %></span>
     </div>
   <% end %>
     
-  <%= content_tag :h4, @test_passage.current_question.body, class: 'blog-post-title', dada: { question_index: @test_passage.question_index } %>
-  <br>
-  <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-    <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-      <div class='form-check'>
-        <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>
-        <%= b.label %>
-      </div>
-    <% end %>
-    <br>
-    <p><%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post %></p>
-    <p><%= form.submit t('.next'), class: 'btn btn-sm btn-outline-secondary' %></p>
-  <% end %>
+  <%= render "form" %>
+
 <% end %>

@@ -10,6 +10,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        timer: "Таймер(сек.)"
     select:
       prompt: "Выбрать"
 
@@ -54,7 +55,7 @@ ru:
 
   test_passages:
     result:
-      header: "Тест %{title} успешно завершен!"
+      header: "Тест %{title} завершен!"
     show:
       test: "Тест %{title}"
       category: "Категория %{title}"

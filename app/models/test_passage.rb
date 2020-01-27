@@ -14,7 +14,7 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.correct_questions += 1 if correct_answer?(answer_ids) && in_time?
 
     save!
   end
@@ -28,11 +28,23 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    percentage_score >= SUCCESS
+    percentage_score >= SUCCESS && in_time?
   end
 
   def question_index
     test.questions.order(:id).where('id < ?', current_question.id).count + 1
+  end
+
+  def test_time_finish
+    created_at + test.timer
+  end
+
+  def in_time?
+    test.timer? && !test_time_finish.past?
+  end
+
+  def timer
+    test_timer
   end
 
   private
@@ -55,6 +67,10 @@ class TestPassage < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  def test_timer
+    (test_time_finish - Time.now).round
   end
 
 end
