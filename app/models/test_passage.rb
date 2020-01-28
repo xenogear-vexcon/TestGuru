@@ -14,7 +14,11 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids) && !out_of_time?
+    if correct_answer?(answer_ids) && in_time?
+      self.correct_questions += 1
+    elsif out_of_time?
+      current_question = nil
+    end
 
     save!
   end
@@ -41,6 +45,10 @@ class TestPassage < ApplicationRecord
 
   def out_of_time?
     test.timer? && test_time_finish.past?
+  end
+
+  def in_time?
+    !out_of_time?
   end
 
   def timer

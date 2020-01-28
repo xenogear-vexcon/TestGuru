@@ -1,10 +1,12 @@
 document.addEventListener('turbolinks:load', function() {
 	var timerValue = document.getElementById("timer");
-	var timer = timerValue.dataset.timer;
-	var counter = 0;
-	timerFormat(timer);
-	var interval = setInterval(timeIt, 1000);
-
+	if (timerValue) {
+		var timer = timerValue.dataset.timer;
+		var counter = 0;
+		timerFormat(timer);
+		var interval = setInterval(timeIt, 1000);
+	}
+	
 	function timeIt() {
 		if(timer>counter){
 			counter++;
@@ -13,6 +15,7 @@ document.addEventListener('turbolinks:load', function() {
 			clearInterval(interval);
 			timerValue.style.color="red";
 			timerValue.innerHTML = "time is up!";
+			document.querySelector('form').submit();
 		}
 	}
 
