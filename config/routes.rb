@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
+  resources :badges, only: :index
+
   resources :tests, only: :index do
     post :start, on: :member
   end
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     get :result, on: :member
     post :gist, on: :member
+    get :badge, on: :member
   end
 
   namespace :admin do
@@ -24,8 +27,10 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+    resources :badges
   end
 
-  resources :contacts, only: [:new, :create]
+  get '/contact', to: 'application#contact'
+  post '/contact', to: 'application#create_feedback'
 
 end

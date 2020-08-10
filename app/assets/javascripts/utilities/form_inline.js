@@ -1,36 +1,34 @@
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('turbolinks:load', function () {
+  
+  $('.form-inline-link').on('click', formInlineLinkHandler);
 
-  $('.form-inline-link').on('click', formInlineLinkHandler)
+  var errors = document.querySelector('.resource-errors');
+  var formInline = document.querySelector('.form-inline');
 
-  var errors = document.querySelector('.resource-errors')
-
-  if (errors) {
+  if (errors && formInline) {
     var resourceId = errors.dataset.resourceId;
-    formInlineHandler(resourceId)
+    formInlineHandler(resourceId);
   }
-
-})
+});
 
 function formInlineLinkHandler(event) {
-  event.preventDefault()
-
-  var testId = this.dataset.testId
-  formInlineHandler(testId)
+  event.preventDefault();
+  var testId = this.dataset.testId;
+  formInlineHandler(testId);
 }
 
 function formInlineHandler(testId) {
-  var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]')
-  var cancelText = link.dataset.cancelText
-  var editText = link.dataset.editText
-  var $testTitle = $('.test-title[data-test-id="' + testId + '"]')
-  var $formInline = $('.form-inline[data-test-id="' + testId + '"]')
+  var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]');
+  var formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]');
+  var testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]');
 
-  $formInline.toggle()
-  $testTitle.toggle()
-
-  if ($formInline.is(':visible')) {
-    link.textContent = cancelText
-  } else {
-    link.textContent = editText
-  }
+    if (formInline.classList.contains('hide')) {
+      testTitle.classList.add('hide');
+      formInline.classList.remove('hide');
+      link.textContent = "Cancel";
+    } else {
+      formInline.classList.add('hide');
+      testTitle.classList.remove('hide');
+      link.textContent = "Edit";
+    }
 }

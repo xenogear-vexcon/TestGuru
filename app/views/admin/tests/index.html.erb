@@ -1,11 +1,12 @@
 <div class="row justify-content-center mt-3">
-  <div class="col col-md-8">
+  <div class="col col-md-10">
     <h1><%= t('.header') %></h1>
-    <%= link_to t('.gists'), admin_gists_path, class: 'nav-link' %>
-    <%= link_to t('.new'), new_admin_test_path, class: 'nav-link' %>
-
+    <br>
+    <%= link_to t('.gists'), admin_gists_path, class: 'btn btn-sm btn-outline-secondary' %>
+    <%= link_to t('.new'), new_admin_test_path, class: 'btn btn-sm btn-outline-secondary' %>
+    <%= link_to t('.badges'), admin_badges_path, class: 'btn btn-sm btn-outline-secondary' %>
     <%= render 'shared/errors', resource: @test %>
-
+    <br><br>
     <table class="table">
       <thead>
       <tr>
@@ -14,6 +15,7 @@
           <%= octicon 'arrow-up', class: 'text-success hide' %>
           <%= octicon 'arrow-down', class: 'text-success hide' %>
         </th>
+        <th scope="col"><%= t('tests.index.category') %></th>
         <th scope="col"><%= t('.level') %></th>
         <th scope="col"><%= t('.questions') %></th>
         <th colspan="4" scope="col" class="text-center"><%= t('.actions') %></th>

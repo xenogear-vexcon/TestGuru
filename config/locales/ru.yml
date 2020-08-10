@@ -27,23 +27,28 @@ ru:
       registration: "Регистрация"
       contact: "Связаться с нами"
       main_page: "На главную"
+      badges: "Награды"
     header_admin:
       title: "Панель администратора"
       main_page: "На главную"
       admin_gists: "Gists администратора"
       welcome: "Добро пожаловать"
       sign_out: "Выйти"
-    cancel: "Закрыть"
-    edit: "Редактировать название"
+
+  badges:
+    index:
+      header: "Награды"
+      back: "Назад"
 
   tests:
     index:
       header: "Доступные тесты"
-      test: "Название теста"
+      category: "Категория"
+      title: "Название теста"
       level: "Уровень"
       count: "Количество вопросов"
-      actions: "Actions"
-      pass: "Pass the test"
+      actions: "Действия"
+      pass: "Пройти тест"
     test:
       pass: "Пройти тест"
 
@@ -52,6 +57,7 @@ ru:
       header: "Тест %{title} успешно завершен!"
     show:
       test: "Тест %{title}"
+      category: "Категория %{title}"
       progress: "Прогресс"
       gist: "Gist"
       next: "Далее"
@@ -59,12 +65,9 @@ ru:
       success: "Gist был успешно сохранен %{link}!"
       failure: "Произошла ошибка при сохранении gist"
 
-  contacts:
-    create:
-      get_back: "Мы вам скоро ответим"
-      gratitude: "Спасибо вам за сообщение!"
-      success: "Сообщение отправлено"
-      failure: "Невозможно отправить сообщение!"
+  application:
+    create_feedback:
+      success: "Сообщение успешно отправлено! Мы вам скоро ответим!"
 
   admin:
     tests:
@@ -78,6 +81,7 @@ ru:
         header: "Доступные тесты"
         gists: "Gists"
         new: "Новый"
+        badges: "Награды"
         title: "Название"
         level: "Уровень"
         questions: "Вопросы"
@@ -85,7 +89,13 @@ ru:
       edit:
         edit: "Редактировать"
       show:
+        title: "Название"
+        level: "Уровень"
+        questions: "Вопросы"
+        actions: "Действия"
         new_question: "Добавить вопрос"
+        edit: "Редактировать"
+        delete: "Удалить"
         show: "Смотреть"
         back: "Назад"
       new:
@@ -98,6 +108,9 @@ ru:
       form_inline:
         submit: "Ок"
     questions:
+      form:
+        back: "Назад"
+        question: "Вопрос"
       show:
         new_answer: "Добавить ответ"
         edit: "Редактировать"
@@ -107,12 +120,64 @@ ru:
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+      show:
+        question: "Вопрос"
+        body: "Ответ"
+        correct: "Правильность"
+        edit: "Редактировать"
+        back: "Назад"
+      form:
+        body: "Ответ"
+        correct: "Правильный?"
+        back: "Назад"
+      edit:
+        title: "Редактировать ответ"
+        question: "Вопрос"
+      new:
+        new: "Новый ответ"
+        question: "Вопрос"
     gists:
       index:
         header: "Gists пользователя"
         question: "Вопрос"
         url: "Gist url"
         user: "email пользователя"
+    badges:
+      index:
+        header: "Награды"
+        new: "Создать"
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        back: "Назад"
+        image: "Изображение"
+        title: "Название"
+        rule: "Правило"
+        option: "Опция"
+        actions: "Действия"
+      new:
+        header: "Создать новую награду"
+      show:
+        badge: "Награда"
+        back: "К наградам"
+      form:
+        first_attempt: "Первая успешная попытка"
+        tests_by_category_finished: "Все тесты в категории"
+        tests_by_level_finished: "Все тесты уровня"
+        first_try: "Тест с первой попытки"
+        first_try_100: "Первая попытка со 100% результатом"
+        category: "Все тесты в категории"
+        category_100: "Все тесты в категории со 100% результатом"
+        level: "Все тесты уровня"
+        level_100: "Все тесты по уровню со 100% результатом"
+        try_option: "первая попытка"
+        level_option: "уровень"
+        category_option: "категория"
 
   services:
     gist:

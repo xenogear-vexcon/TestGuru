@@ -3,24 +3,24 @@
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
+  <td class="align-middle"><%= test.category.title %></td>
   <td class="align-middle"><%= test.level %></td>
   <td class="align-middle"><%= test.questions.count %></td>
-  <td class="align-middle"><%= link_to t('.show'), admin_test_path(test) %></td>
+  <td class="align-middle"><%= link_to t('.show'), admin_test_path(test), class: 'btn btn-sm btn-outline-secondary' %></td>
   <td class="align-middle">
     <%= link_to t('.edit_title'),
                 edit_admin_test_path(test),
-                data: { test_id: test.id,
-                        edit_text: t('shared.edit'),
-                        cancel_text: t('shared.cancel')},
-                class: 'form-inline-link' %>
+                data: { test_id: test.id },
+                class: 'form-inline-link btn btn-sm btn-outline-secondary' %>
   </td>
   <td class="align-middle">
-    <%= link_to t('.edit'), edit_admin_test_path(test) %>
+    <%= link_to t('.edit'), edit_admin_test_path(test), class: 'btn btn-sm btn-outline-secondary' %>
   </td>
   <td class="align-middle">
     <%= link_to t('.delete'),
                 admin_test_path(test),
                 method: :delete,
-                data: { confirm: t('navigation.confirm') } %>
+                data: { confirm: t('navigation.confirm') },
+                class: 'btn btn-sm btn-outline-danger' %>
   </td>
 </tr>

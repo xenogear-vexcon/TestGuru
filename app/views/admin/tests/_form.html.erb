@@ -2,17 +2,17 @@
 <%= render 'shared/errors', resource: @test %>
   <p>
     <%= form.label :title %>
-    <%= form.text_field :title, id: :test_title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </p>
   <p>
     <%= form.label :level %>
-    <%= form.number_field :level, id: :test_level%>
+    <%= form.number_field :level, class: 'form-control' %>
   </p>
   <p>
     <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true%>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: 'form-control' %>
   </p>
 
-  <p><%= form.submit %></p>
-  <p><%= link_to 'Back', admin_tests_path, class: "btn btn-warning" %></p>
+  <p><%= form.submit class: 'btn btn-outline-success my-2 my-sm-0' %></p>
+  <p><%= link_to 'Back', admin_tests_path, class: "btn btn-sm btn-outline-dark" %></p>
 <% end %>

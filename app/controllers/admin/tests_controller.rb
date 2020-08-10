@@ -3,7 +3,7 @@ class Admin::TestsController < Admin::BaseController
   before_action :find_tests, only: %i[index update_inline]
   before_action :find_test, only: %i[show edit update destroy update_inline start]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index; end
 
@@ -55,9 +55,13 @@ class Admin::TestsController < Admin::BaseController
   def find_test
     @test = Test.find(params[:id])
   end
-
+  
   def find_tests
     @tests = Test.all
+  end
+
+  def rescue_with_test_not_found
+    render plain: 'Такого теста не существует!'
   end
 
 end

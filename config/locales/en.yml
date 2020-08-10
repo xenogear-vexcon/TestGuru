@@ -25,18 +25,23 @@ en:
       registration: "Registration"
       contact: "Contact"
       main_page: "Main page"
+      badges: "Rewards"
     header_admin:
       title: "Admin panel"
       main_page: "Main page"
       admin_gists: "Admin gists"
       welcome: "Welcome"
       sign_out: "Sign out"
-    cancel: "Cancel"
-    edit: "Edit"
+
+  badges:
+    index:
+      header: "Rewards"
+      back: "Back"
 
   tests:
     index:
       header: "Tricky tests"
+      category: "Category"
       title: "Test name"
       level: "Level"
       count: "Questions count"
@@ -50,6 +55,7 @@ en:
       header: "The %{title} test was complited!"
     show:
       test: "Test %{title}"
+      category: "Category %{title}"
       progress: "Progress"
       gist: "Gist Question"
       next: "Next"
@@ -57,12 +63,9 @@ en:
       success: "Gist was successfully created, %{link}!"
       failure: "An error occurred while saving gist"
 
-  contacts:
-    create:
-      get_back: "We'll get back to you soon."
-      gratitude: "Thank you for your message!"
-      success: "Message sent"
-      failure: "Cann't send message"
+  application:
+    create_feedback:
+      success: "Message successfully sent! We'll get back to you soon!"
 
   admin:
     tests:
@@ -76,6 +79,7 @@ en:
         header: "Tricky tests"
         gists: "Gists"
         new: "New"
+        badges: "Badges"
         title: "Title"
         level: "Level"
         questions: "Questions"
@@ -83,7 +87,13 @@ en:
       edit:
         edit: "Edit"
       show:
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
         new_question: "Create new question"
+        edit: "Edit"
+        delete: "Delete"
         show: "Show"
         back: "Back"
       new:
@@ -96,6 +106,9 @@ en:
       form_inline:
         submit: "Ok"
     questions:
+      form:
+        back: "Back"
+        question: "Question"
       show:
         new_answer: "Create new answer"
         edit: "Edit"
@@ -105,12 +118,64 @@ en:
         show: "Show"
         edit: "Edit"
         delete: "Delete"
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      show:
+        question: "Question"
+        body: "Answer"
+        correct: "Correctness"
+        edit: "Edit"
+        back: "Back"
+      form:
+        body: "Body"
+        correct: "Correct?"
+        back: "Back"
+      edit:
+        title: "Editing Answer"
+        question: "Question"
+      new:
+        new: "New answer"
+        question: "Question"
     gists:
       index:
         header: "Users Gists"
         question: "Question"
         url: "Gist url"
         user: "User email"
+    badges:
+      index:
+        header: "Badges"
+        new: "New"
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        back: "Back"
+        image: "Image"
+        title: "Title"
+        rule: "Rule"
+        option: "Option"
+        actions: "Actions"
+      new:
+        header: "Create new badge"
+      show:
+        badge: "Badge"
+        back: "Back to badges"
+      form:
+        first_attempt: "First success attempt"
+        tests_by_category_finished: "All tests in category"
+        tests_by_level_finished: "All tests by level"
+        first_try: "First test try"
+        first_try_100: "First try with 100% result"
+        category: "All tests in category"
+        category_100: "All tests in category with 100% result"
+        level: "All tests by level"
+        level_100: "All tests by level with 100% result"
+        try_option: "first try"
+        level_option: "level"
+        category_option: "category"
 
   services:
     gist:

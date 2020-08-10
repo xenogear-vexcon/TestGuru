@@ -3,9 +3,9 @@
 @import "typography/status_bar";
 @import "global";
 @import "contacts";
-@import "nav";
 @import "scaffolds";
 @import "test_passages";
+@import "flash";
 
 html,
 body,
@@ -13,7 +13,11 @@ body,
   height: 100%;
 }
 
-.footer {
-  height: 100px;
-  margin-top: -100px;
+.header, footer {
+	max-width: 1086px;
+}
+
+footer {
+  height: 80px;
+  margin: -100px auto 0;
 }

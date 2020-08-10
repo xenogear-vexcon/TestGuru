@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_question
 
+  scope :success, -> { where('score >= ?', SUCCESS) }
+
   SUCCESS = 85
 
   def completed?
@@ -18,7 +20,11 @@ class TestPassage < ApplicationRecord
   end
 
   def percentage_score
-    100.0 * correct_answers.count / test.questions.count
+    100.0 * correct_questions / test.questions.count
+  end
+
+  def result
+    update!(score: percentage_score)
   end
 
   def success?
@@ -44,7 +50,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answers
-    current_question.answers.answer_correct
+    current_question.answers.answer_correct 
   end
 
   def next_question
