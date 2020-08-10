@@ -9,6 +9,8 @@ class Test < ApplicationRecord
     message: "can be only one test with that title and level" }
   validates :level, numericality: { greater_than_or_equal_to: 0,
                                     only_integer: true }
+  validates :timer, numericality: { greater_than_or_equal_to: 0,
+                                    only_integer: true }
 
   default_scope { order(level: :asc) }
   scope :easy, -> { where(level: (0..1)) }
