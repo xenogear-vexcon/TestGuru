@@ -47,7 +47,7 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'octicons_helper'
 
 gem "aws-sdk-s3", require: false
-gem 'image_processing', '~> 1.9', '>= 1.9.3'
+gem 'image_processing', '~> 1.12'
 gem 'active_storage_validations', '~> 0.8.3'
 
 gem "octokit", "~> 4.0"
